@@ -1,0 +1,2117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Supreme Court of India Application Form</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,Helvetica,sans-serif}
+body{background:#f9f6f0;color:#333;min-height:100vh;display:flex;flex-direction:column}
+.top-banner{background:linear-gradient(to bottom,#fff,#efefef);text-align:center;padding:15px 10px 20px;border-top:4px solid #333}
+.top-banner h2{font-size:26px;color:#222;font-weight:600;margin-bottom:5px}
+.top-banner h1{font-size:42px;font-family:Georgia,serif;color:#111;font-weight:bold}
+.navbar{background:#16325c;color:#fff;display:flex;justify-content:space-between;align-items:center;padding:0 30px;height:42px;font-size:15px}
+.navbar .nav-title{font-weight:500}
+.navbar .nav-links{display:flex;align-items:center;height:100%;gap:8px}
+.navbar .nav-links a{color:#fff;text-decoration:none;font-size:12px;font-weight:bold;padding:0 12px;height:100%;display:flex;align-items:center;cursor:pointer}
+.navbar .nav-links .divider{color:#7a94b8;font-size:14px}
+.navbar .nav-links a.btn-highlight{background:#2b5c8f;border-radius:3px;height:28px}
+.navbar .nav-links a.btn-nav-light{background:#f8f9fa;color:#333;border:1px solid #ccc;border-radius:3px;height:28px;padding:0 10px;font-size:11px;font-weight:bold;display:flex;align-items:center;gap:5px}
+.navbar .nav-links a.btn-nav-light:hover{background:#e2e6ea}
+.page-view{display:none;flex:1}
+.page-view.active{display:flex;flex-direction:column}
+
+/* Modals */
+.note-modal-overlay{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.4);display:none;justify-content:center;align-items:flex-start;padding-top:80px;z-index:10000;overflow-y:auto}
+.note-modal-box{width:92%;max-width:1020px;background:#f6f3eb;border:1px solid #666;box-shadow:0 6px 20px rgba(0,0,0,0.35);margin-bottom:40px}
+.note-modal-header{background:#3b3b3b;color:#fff;padding:12px 18px;font-size:18px;display:flex;justify-content:space-between;align-items:center}
+.note-modal-close-x{cursor:pointer;font-size:16px;color:#ccc;font-weight:bold}
+.note-modal-body{padding:22px 20px;font-size:15px;color:#333;line-height:2.1;font-weight:bold}
+.note-modal-footer{background:#216389;padding:10px;text-align:center}
+.note-modal-btn{background:#efefef;color:#444;border:1px solid #ccc;padding:6px 18px;font-size:14px;border-radius:2px;cursor:pointer}
+.note-modal-btn:hover{background:#ddd}
+
+/* Home Page */
+.main-container{max-width:1140px;width:95%;margin:15px auto 30px;background:#fbf9f3;border:1px solid #dcdcdc;flex:1}
+.tab-bar{background:#efefef;border-bottom:1px solid #ddd;padding:8px 0 0 15px}
+.tab-active{display:inline-block;background:#fbf9f3;color:#b52b27;font-weight:bold;font-size:13px;padding:10px 18px;border-top:3px solid #d9534f;border-left:1px solid #ddd;border-right:1px solid #ddd;margin-bottom:-1px}
+.content-box{padding:20px}
+.instructions-title{font-size:13px;font-weight:bold;color:#222;margin-bottom:18px}
+.instructions-list{list-style:none;font-size:12.5px;line-height:1.7;color:#333;margin-bottom:20px}
+.section-block{border:1px solid #ccc;margin-bottom:18px;background:#fbf9f3}
+.section-header{background:#e2e2e2;color:#16325c;font-weight:bold;font-size:13px;padding:10px 15px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #ccc}
+.section-row{display:flex;align-items:center;justify-content:space-between;padding:12px 20px;border-bottom:1px solid #e5e5e5;font-size:13px;color:#444}
+.section-row:last-child{border-bottom:none}
+.row-left{display:flex;align-items:center;gap:10px;width:65%}
+.row-left i{color:#777;font-size:14px}
+.row-right{width:35%;display:flex;align-items:center;justify-content:center;position:relative}
+.row-right::before{content:"";position:absolute;left:0;height:18px;border-left:1px solid #999}
+.row-right a{color:#337ab7;text-decoration:none;font-size:13px;display:flex;align-items:center;gap:6px;cursor:pointer;padding:2px 6px}
+.row-right a:hover{text-decoration:underline;outline:1px solid #333}
+.icon-pdf{color:#d9534f}.icon-login{color:#3c763d}.icon-register{color:#337ab7}
+.footer-home{background:#536a86;color:#fff;text-align:center;padding:10px 15px 20px;font-size:13px}
+.footer-notice{margin-bottom:12px;font-size:14px}
+.footer-notice span{color:#ff4d4d;font-weight:bold}
+.footer-version{font-size:11px;color:#e0e0e0}
+
+/* Login Page */
+.login-top-divider{height:3px;background:#4a6785;width:100%}
+.login-wrapper{flex:1;display:flex;justify-content:center;align-items:flex-start;padding:25px 0}
+.login-card{width:370px;background:#f4f4f4;border:1px solid #d0d0d0;border-radius:6px;box-shadow:0 2px 6px rgba(0,0,0,0.12);overflow:hidden}
+.login-card-header{background:#1f648b;color:#fff;text-align:center;font-size:18px;font-weight:bold;padding:9px 0}
+.login-card-body{padding:14px 35px 22px}
+.login-subtitle{text-align:center;font-size:13px;color:#333;margin-bottom:18px}
+.login-form-group{margin-bottom:15px}
+.login-form-group label{display:block;font-size:11px;color:#333;margin-bottom:5px;text-transform:uppercase}
+.req-star{color:#d9534f;font-weight:bold}
+.input-wrapper{position:relative;display:flex;align-items:center}
+.login-input{width:100%;height:30px;background:#fff;border:1px solid #ccc;padding:4px 10px;font-size:12px;color:#333;outline:none}
+.password-eye{position:absolute;right:-22px;color:#222;font-size:13px;cursor:pointer}
+
+/* Captcha */
+.captcha-section{display:flex;flex-direction:column;align-items:center;margin-top:18px}
+.captcha-row{display:flex;align-items:center;gap:8px;margin-bottom:8px}
+.captcha-canvas{width:145px;height:46px;border:1px solid #aaa;background:linear-gradient(135deg,#d3dced 0%,#8ca4cc 55%,#6983b2 100%)}
+.captcha-actions{display:flex;flex-direction:column;align-items:center;gap:6px}
+.captcha-refresh{color:#333;font-size:13px;cursor:pointer}
+.captcha-ok{border:1px solid #555;border-radius:3px;font-size:9px;font-weight:bold;padding:1px 3px;color:#333;background:#fff;cursor:default}
+.captcha-input-wrap{position:relative;width:175px}
+.captcha-input{width:100%;height:28px;border:1px solid #ccc;background:#fff;font-size:10px;text-align:center;padding:2px 6px;outline:none}
+.captcha-info-icon{display:block;text-align:right;margin-top:3px;color:#1f648b;font-size:12px}
+.login-btn-wrap{text-align:center;margin-top:12px}
+.btn-submit-blue{background:#1f648b;color:#fff;border:none;border-radius:3px;padding:7px 22px;font-size:11.5px;font-weight:bold;cursor:pointer;text-transform:uppercase}
+.btn-submit-blue:hover:not(:disabled){background:#184f6e}
+.btn-submit-blue:disabled{background:#7c9eb2;cursor:not-allowed}
+.footer-light{background:#eceae2;border-top:1px solid #dcdad2;text-align:center;padding:6px;font-size:11px;color:#444}
+
+/* Registration & Application Common */
+.reg-container{max-width:1180px;width:96%;margin:15px auto 30px;flex:1}
+.inst-box{border:1px solid #ccc;background:#fbf9f3;margin-bottom:18px}
+.inst-header{background:#e2e2e2;padding:8px 15px;font-size:13px;font-weight:bold;color:#333;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #ccc;cursor:pointer}
+.inst-body{padding:15px;font-size:12px;line-height:1.6}
+.note-alert{background:#f9e2e2;border:1px solid #ebccd1;padding:10px 15px;border-radius:3px;margin-bottom:12px;color:#333;font-size:12px}
+.note-alert .note-title{color:#d9534f;font-weight:bold;display:block;margin-bottom:2px}
+.reg-tab-header{background:#1f648b;color:#fff;display:inline-block;padding:9px 22px;font-size:13px;font-weight:bold;border-radius:3px 3px 0 0}
+.reg-form-box{border:1px solid #ccc;background:#fbf9f3}
+.reg-sub-bar{background:#efefef;padding:10px 15px;font-size:13px;font-weight:bold;color:#16325c;border-bottom:1px solid #ccc;border-top:1px solid #ccc;display:flex;justify-content:space-between;align-items:center}
+.reg-form-inner{padding:20px}
+.form-row{display:flex;gap:25px;margin-bottom:18px;flex-wrap:wrap}
+.form-col{flex:1;min-width:240px;max-width:calc(33.333% - 17px)}
+@media(max-width:850px){.form-col{max-width:100%}}
+.form-col label{display:block;font-size:12px;color:#333;margin-bottom:6px}
+.reg-input,.reg-select{width:100%;height:34px;border:1px solid #ccc;border-radius:3px;padding:5px 10px;font-size:12px;background:#fff;color:#333;outline:none}
+.reg-input:focus,.reg-select:focus{border-color:#1f648b}
+.reg-input[readonly],.reg-input:disabled,.reg-select:disabled{background:#e9ecef;color:#555}
+.input-Error-highlight{border-color:#d9534f!important;box-shadow:0 0 4px rgba(217,83,79,0.65)}
+.phone-group{display:flex;gap:6px}
+.phone-prefix{width:55px;height:34px;background:#e9ecef;border:1px solid #ccc;display:flex;align-items:center;justify-content:center;font-size:12px;color:#555;border-radius:3px}
+.calendar-input-wrap{position:relative;width:100%}
+.calendar-input-wrap .reg-input{padding-right:32px}
+.calendar-input-wrap i{position:absolute;right:10px;top:50%;transform:translateY(-50%);color:#555;font-size:14px;pointer-events:none}
+
+/* Searchable Dropdown */
+.searchable-select-wrap{position:relative;width:100%}
+.searchable-select-Trigger{width:100%;height:34px;border:1px solid #ccc;border-radius:3px;padding:5px 10px;font-size:12px;background:#fff;color:#555;display:flex;justify-content:space-between;align-items:center;cursor:pointer;user-select:none}
+.searchable-select-Trigger span{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.searchable-select-Trigger i{font-size:10px;color:#666;margin-left:6px}
+.searchable-dropdown-menu{position:absolute;top:100%;left:0;width:100%;background:#f9f6f0;border:1px solid #888;box-shadow:0 4px 10px rgba(0,0,0,0.18);z-index:3000;display:none;flex-direction:column}
+.searchable-dropdown-menu.drop-up{top:auto;bottom:100%;box-shadow:0 -3px 8px rgba(0,0,0,0.18)}
+.searchable-dropdown-menu.open{display:flex}
+.searchable-search-box{padding:5px;background:#f9f6f0;border-bottom:1px solid #ccc}
+.searchable-search-box input{width:100%;height:28px;border:1px solid #222;border-radius:2px;padding:3px 8px;font-size:12px;outline:none;background:#fff}
+.searchable-options-list{max-height:210px;overflow-y:auto;list-style:none}
+.searchable-option-item{padding:5px 10px;font-size:12px;color:#333;cursor:pointer}
+.searchable-option-item:hover,.searchable-option-item.selected{background:#216389;color:#fff}
+
+/* OTP & Re-verify */
+.otp-section{display:none;background:#eef5f9;border:1px solid #b8daff;border-radius:4px;padding:15px;margin-bottom:18px}
+.otp-inline-group{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.verified-badge{display:none;color:#28a745;font-weight:bold;font-size:12px;align-items:center;gap:4px}
+.otp-timer-text{font-size:11.5px;color:#d9534f;font-weight:bold;margin-top:8px}
+.reverify-box{display:none;margin-top:20px;border:1px solid #1f648b;background:#fff}
+.reverify-header{background:#1f648b;color:#fff;padding:8px 15px;font-size:13px;font-weight:bold}
+.reverify-table{width:100%;border-collapse:collapse;font-size:12px}
+.reverify-table th,.reverify-table td{border:1px solid #ddd;padding:10px 15px;text-align:left}
+.reverify-table th{background:#f4f4f4;width:35%}
+.decl-header{background:#e9e9e9;padding:8px 15px;font-size:13px;font-weight:bold;color:#16325c;border:1px solid #ccc;margin-top:20px}
+.decl-body{border:1px solid #ccc;border-top:none;padding:15px;font-size:12px;line-height:1.6;background:#fff}
+.agree-check{margin-top:12px;display:flex;align-items:center;gap:6px;font-weight:bold;color:#16325c}
+
+/* Dashboard & Tabs */
+.portal-tabs-row{display:flex;gap:4px;margin-bottom:-1px;flex-wrap:wrap}
+.portal-tab{padding:9px 20px;font-size:12px;font-weight:bold;background:#e2e2e2;color:#333;border:1px solid #ccc;border-bottom:none;border-radius:3px 3px 0 0;cursor:pointer;text-transform:uppercase;user-select:none}
+.portal-tab.completed{background:#5cb85c;color:#fff;border-color:#4cae4c}
+.portal-tab.active{background:#1f648b;color:#fff;border-color:#1f648b}
+.summary-block{border:1px solid #ccc;background:#fbf9f3;margin-bottom:18px}
+.summary-header{background:#e9e9e9;color:#16325c;font-weight:bold;font-size:13px;padding:9px 15px;border-bottom:1px solid #ccc}
+.summary-body{padding:15px 20px}
+.summary-grid-row{display:flex;flex-wrap:wrap;padding:10px 0;border-bottom:1px solid #ececec}
+.summary-grid-row:last-child{border-bottom:none}
+.summary-item{flex:1;min-width:260px}
+.summary-item .s-label{font-size:12px;font-weight:bold;color:#222;margin-bottom:4px}
+.summary-item .s-value{font-size:12px;color:#555;font-weight:normal}
+.decl-bullet-list{list-style:disc;padding-left:20px;font-size:12px;color:#444;line-height:1.8}
+.decl-bullet-list li{margin-bottom:6px}
+
+/* Application Cards */
+.app-section-card{border:1px solid #ccc;background:#fbf9f3;margin-bottom:18px}
+.app-section-header{background:#e9e9e9;color:#16325c;font-weight:bold;font-size:13px;padding:9px 15px;border-bottom:1px solid #ccc;display:flex;justify-content:space-between;align-items:center;cursor:pointer;user-select:none}
+.app-section-header .collapse-sign{font-size:15px;color:#444;font-weight:bold}
+.app-section-body{padding:18px 20px}
+.radio-inline-group{display:flex;align-items:center;gap:18px;margin-top:6px;font-size:12px;color:#444}
+.radio-inline-group label{display:inline-flex;align-items:center;gap:5px;margin-bottom:0;cursor:pointer}
+.disclaimer-text{color:#e60000;font-size:11.5px;line-height:1.5;margin-top:10px}
+.disclaimer-text strong{display:block;text-decoration:underline;margin-bottom:2px}
+
+/* Step 4 Upload Row */
+.upload-row-item{display:flex;justify-content:space-between;align-items:center;padding:14px 20px;border-bottom:1px solid #e6e4dc;flex-wrap:wrap;gap:10px}
+.upload-row-item:last-child{border-bottom:none}
+.upload-label-col{flex:1;min-width:280px;font-size:12px;color:#333}
+.upload-info-icon{color:#1f648b;margin-left:5px;font-size:13px;cursor:pointer}
+.upload-action-col{width:34%;display:flex;align-items:center;justify-content:center;gap:10px}
+.btn-click-upload{background:#1f648b;color:#fff;border:none;border-radius:3px;padding:7px 16px;font-size:11px;font-weight:bold;cursor:pointer;text-transform:uppercase}
+.file-status-badge{font-size:11.5px;color:#28a745;font-weight:bold;display:none}
+
+/* Loading Overlay */
+.loading-overlay{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(255,255,255,0.7);backdrop-filter:blur(2px);display:none;justify-content:center;align-items:center;z-index:9999}
+.loading-box{background:#fff;border:1px solid #ccc;padding:20px 30px;width:340px;text-align:center;box-shadow:0 4px 12px rgba(0,0,0,0.15);border-radius:4px}
+.progress-bar-bg{width:100%;height:16px;background:#e9ecef;border-radius:3px;overflow:hidden;margin-bottom:10px}
+.progress-bar-fill{width:43%;height:100%;background:#17a2b8;color:#fff;font-size:10px;line-height:16px;font-weight:bold;transition:width 0.35s ease}
+
+/* ================= BILLDESK PAYMENT GATEWAY STYLES ================= */
+#payment-gateway-view{background:#eef1f6;justify-content:center;align-items:center;padding:30px 15px}
+.bd-card{width:100%;max-width:960px;min-height:510px;background:#fff;border-radius:4px;box-shadow:0 4px 20px rgba(0,0,0,0.12);display:flex;overflow:hidden;border:1px solid #dcdcdc}
+.bd-left{width:250px;background:#f7f8fa;border-right:1px solid #e5e7eb;padding:25px 0}
+.bd-left-title{font-size:13px;color:#888;padding:0 22px 15px;font-weight:600}
+.bd-method-item{display:flex;align-items:center;justify-content:space-between;padding:15px 22px;font-size:13.5px;color:#444;cursor:pointer;border-left:4px solid transparent}
+.bd-method-item.active{background:#fff;color:#111;font-weight:bold;border-left-color:#f37021}
+.bd-method-left{display:flex;align-items:center;gap:12px}
+.bd-center{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:30px 20px;position:relative}
+.bd-qr-title{font-size:15px;font-weight:600;color:#222;margin-bottom:12px}
+.bd-upi-id{font-size:14px;color:#555;margin-bottom:12px;font-weight:600}
+.bd-qr-box{width:220px;height:220px;background:#fff;display:flex;align-items:center;justify-content:center;margin-bottom:14px;position:relative}
+.bd-qr-box img{width:100%;height:100%;object-fit:contain}
+.bd-timer-text{font-size:13px;color:#555;margin-bottom:10px}
+.bd-timer-text span{color:#e65100;font-weight:bold}
+.bd-pay-confirm-btn{background:#f37021;color:#fff;border:none;border-radius:4px;padding:9px 22px;font-size:12px;font-weight:bold;cursor:pointer;box-shadow:0 2px 5px rgba(0,0,0,0.15)}
+.bd-pay-confirm-btn:hover{background:#d95f16}
+.bd-right{width:290px;border-left:1px solid #e5e7eb;padding:28px 24px;display:flex;flex-direction:column;justify-content:space-between;background:#fff}
+.bd-info-group{margin-bottom:18px}
+.bd-info-label{font-size:12px;color:#888;margin-bottom:4px}
+.bd-info-val{font-size:13.5px;color:#222;font-weight:bold;word-break:break-all}
+.bd-amount-row{display:flex;justify-content:space-between;align-items:center;border-top:1px solid #eee;padding-top:16px;margin-top:10px}
+.bd-amount-val{font-size:17px;font-weight:bold;color:#111}
+.bd-footer-brand{text-align:right;margin-top:auto}
+.bd-logo-text{font-size:20px;font-weight:bold;color:#444;display:flex;align-items:center;justify-content:flex-end;gap:6px}
+.bd-logo-dot{width:14px;height:14px;background:#f37021;border-radius:50%;display:inline-block}
+.bd-Cancel-links{font-size:10px;color:#999;margin-top:6px}
+
+/* ================= FINAL PRINTABLE APPLICATION VIEW ================= */
+.photo-box-print{width:110px;height:130px;border:1px solid #ccc;padding:2px;background:#fff;margin-bottom:6px}
+.photo-box-print img{width:100%;height:100%;object-fit:cover}
+.sig-box-print{width:150px;height:55px;border:1px solid #ccc;padding:2px;background:#fff;margin-bottom:6px}
+.sig-box-print img{width:100%;height:100%;object-fit:contain}
+.doc-view-table{width:100%;border-collapse:collapse;margin-top:12px;font-size:12px;background:#fbf9f3}
+.doc-view-table th,.doc-view-table td{border:1px solid #dcdcdc;padding:10px 14px;text-align:left}
+.doc-view-table th{color:#222;font-weight:bold;background:#f3f1ea}
+.doc-view-table a{color:#337ab7;text-decoration:none;font-weight:600;cursor:pointer}
+.doc-view-table a:hover{text-decoration:underline;color:#1f648b}
+
+.print-section-wrap{display:flex;flex-direction:column;align-items:center;margin-top:20px;padding:15px;background:#fff;border:1px solid #ccc;border-radius:4px}
+
+@media print {
+    .navbar, .portal-tabs-row, .footer-light, .no-print { display: none !important; }
+    body { background: #fff !important; }
+    .reg-container, .reg-form-box { width: 100% !important; max-width: 100% !important; margin: 0 !important; border: none !important; padding: 0 !important; }
+    .summary-block { page-break-inside: avoid; margin-bottom: 10px !important; }
+    .summary-header { background-color: #eee !important; -webkit-print-color-adjust: exact; }
+}
+</style>
+</head>
+<body>
+
+<div class="loading-overlay" id="loadingOverlay">
+    <div class="loading-box">
+        <div class="progress-bar-bg"><div class="progress-bar-fill" id="progressFill">43%</div></div>
+        <div style="font-size:13px;color:#333;font-weight:bold;">Loading... Please wait...!</div>
+    </div>
+</div>
+
+<div class="note-modal-overlay" id="noteModalOverlay">
+    <div class="note-modal-box">
+        <div class="note-modal-header">
+            <span>Note</span>
+            <span class="note-modal-close-x" onclick="closeNoteModal()">&#10005;</span>
+        </div>
+        <div class="note-modal-body">
+            <div>Registered successfully.</div>
+            <div>Registration No. is <span id="noteModalRegNo"></span></div>
+            <div>Please note it for future reference.</div>
+            <div>An email and SMS has been sent containing Registration Number/Login ID and password.</div>
+        </div>
+        <div class="note-modal-footer"><button type="button" class="note-modal-btn" onclick="closeNoteModal()">Close</button></div>
+    </div>
+</div>
+
+<div class="note-modal-overlay" id="previewModalOverlay">
+    <div class="note-modal-box">
+        <div class="note-modal-header">
+            <span>Application Form Preview</span>
+            <span class="note-modal-close-x" onclick="closePreviewModal()">&#10005;</span>
+        </div>
+        <div class="note-modal-body" id="previewModalContent" style="font-weight:normal;font-size:13px;line-height:1.7;max-height:70vh;overflow-y:auto;"></div>
+        <div class="note-modal-footer"><button type="button" class="note-modal-btn" onclick="closePreviewModal()">Close Preview</button></div>
+    </div>
+</div>
+
+<div class="top-banner" id="commonTopBanner">
+    <h2>भारत का सर्वोच्च न्यायालय</h2>
+    <h1>Supreme Court of India</h1>
+</div>
+
+<!-- 1. HOME VIEW -->
+<div id="home-view" class="page-view active">
+    <div class="navbar">
+        <div class="nav-title">Supreme Court of India Application Form</div>
+        <div class="nav-links">
+            <span class="divider">|</span>
+            <a onclick="navigateTo('register')">REGISTER</a>
+            <a onclick="navigateTo('login')" class="btn-highlight">LOGIN</a>
+        </div>
+    </div>
+    <div class="main-container">
+        <div class="tab-bar"><div class="tab-active">Important Information</div></div>
+        <div class="content-box">
+            <div class="instructions-title">Read the below instructions carefully, before filling up the form:</div>
+            <ul class="instructions-list">
+                <li>1. Candidate has to fill the details to receive the <strong>User ID</strong> and <strong>Password</strong>.</li>
+                <li>2. Candidate will receive the <strong>User ID</strong> and <strong>Password</strong> on the registered email address and or on the registered mobile number.</li>
+                <li>3. Candidate can login with the <strong>User ID</strong> and <strong>Password</strong> to complete the application form for Supreme Court of India.</li>
+                <li>4. Candidate must provide <strong>Correct Name (as mentioned in 10th Certificate), Date of Birth, Mobile Number</strong> and <strong>Email Address</strong> as these details cannot be changed once the registration is completed.</li>
+            </ul>
+            <div class="section-block">
+                <div class="section-header"><span>GENERAL LINKS</span><span>&minus;</span></div>
+                <div class="section-row">
+                    <div class="row-left"><i class="fa-regular fa-circle-right"></i><span>To read Advertisement</span></div>
+                    <div class="row-right"><a href="3601200708.pdf" target="_blank"><i class="fa-regular fa-file-pdf icon-pdf"></i> Click here</a></div>
+                </div>
+                <div class="section-row">
+                    <div class="row-left"><i class="fa-regular fa-circle-right"></i><span>Manual Of Online Application Form</span></div>
+                    <div class="row-right"><a href="2.pdf" target="_blank"><i class="fa-regular fa-file-pdf icon-pdf"></i> Click here</a></div>
+                </div>
+                <div class="section-row">
+                    <div class="row-left"><i class="fa-regular fa-circle-right"></i><span>Already Registered? To Login</span></div>
+                    <div class="row-right"><a onclick="navigateTo('login')"><i class="fa-solid fa-volume-high icon-login"></i> Click here</a></div>
+                </div>
+                <div class="section-row">
+                    <div class="row-left"><i class="fa-regular fa-circle-right"></i><span>To Register</span></div>
+                    <div class="row-right"><a onclick="navigateTo('register')"><i class="fa-regular fa-pen-to-square icon-register"></i> Click here</a></div>
+                </div>
+            </div>
+            <div class="section-block">
+                <div class="section-header"><span>KEY DATES</span><span>&minus;</span></div>
+                <div class="section-row">
+                    <div class="row-left"><i class="fa-regular fa-circle-right"></i><span>Starting date for application</span></div>
+                    <div class="row-right"><span>07.10.2026</span></div>
+                </div>
+                <div class="section-row">
+                    <div class="row-left"><i class="fa-regular fa-circle-right"></i><span>Last date for online submission</span></div>
+                    <div class="row-right"><span>28.10.2026 11:55 PM</span></div>
+                </div>
+            </div>
+            <div class="section-block">
+                <div class="section-header"><span>HELPDESK</span><span>&minus;</span></div>
+                <div class="section-row"><div class="row-left" style="width:100%;"><i class="fa-regular fa-circle-right"></i><span>Helpdesk - Please feel free to contact through Helpdesk tab integrated in the Application portal .</span></div></div>
+                <div class="section-row"><div class="row-left" style="width:100%;"><i class="fa-regular fa-circle-right"></i><span>Helpline No - +91 7996335552</span></div></div>
+            </div>
+        </div>
+    </div>
+    <div class="footer-home">
+        <div class="footer-notice"><marquee behavior="scroll" direction="left" scrollamount="5"><span>Important Notice:</span> Application will stay live from 07.10.2026 to 28.10.2026 11:55 PM</marquee></div>
+        <div class="footer-version">Version 15.03.01</div>
+    </div>
+</div>
+
+<!-- 2. LOGIN VIEW -->
+<div id="login-view" class="page-view">
+    <div class="login-top-divider"></div>
+    <div class="login-wrapper">
+        <div class="login-card">
+            <div class="login-card-header">Login</div>
+            <div class="login-card-body">
+                <div class="login-subtitle">Login to Fill/Submit/View Application Form</div>
+                <div class="login-form-group">
+                    <label>USER ID: <span class="req-star">*</span></label>
+                    <div class="input-wrapper"><input type="text" id="loginUserId" class="login-input" placeholder="Enter User ID"></div>
+                </div>
+                <div class="login-form-group">
+                    <label>PASSWORD: <span class="req-star">*</span></label>
+                    <div class="input-wrapper">
+                        <input type="password" id="loginPassword" class="login-input" placeholder="Enter Password">
+                        <i class="fa-solid fa-eye password-eye" id="toggleEye" onclick="togglePassword()"></i>
+                    </div>
+                </div>
+                <div class="captcha-section">
+                    <div class="captcha-row">
+                        <canvas id="loginCaptchaCanvas" class="captcha-canvas" width="145" height="46"></canvas>
+                        <div class="captcha-actions">
+                            <i class="fa-solid fa-arrows-rotate captcha-refresh" onclick="drawCaptcha('loginCaptchaCanvas')" title="Refresh Captcha"></i>
+                            <span class="captcha-ok">OK</span>
+                        </div>
+                    </div>
+                    <div class="captcha-input-wrap">
+                        <input type="text" id="loginCaptchaInput" class="captcha-input" placeholder="Type characters as shown in image">
+                        <i class="fa-solid fa-circle-info captcha-info-icon"></i>
+                    </div>
+                </div>
+                <div class="login-btn-wrap"><button type="button" class="btn-submit-blue" onclick="handleLogin()">LOGIN</button></div>
+            </div>
+        </div>
+    </div>
+    <div class="footer-light">Version 15.03.01</div>
+</div>
+
+<!-- 3. REGISTER VIEW -->
+<div id="register-view" class="page-view">
+    <div class="navbar">
+        <div class="nav-title">Supreme Court of India Application Form</div>
+        <div class="nav-links">
+            <a onclick="navigateTo('login')" class="btn-highlight">LOGIN</a>
+            <a onclick="navigateTo('home')" class="btn-highlight">HOME</a>
+        </div>
+    </div>
+    <div class="reg-container">
+        <div class="inst-box">
+            <div class="inst-header" onclick="toggleSectionBody(this)">
+                <span>Instructions <i class="fa-solid fa-circle-info" style="color:#1f648b;"></i></span>
+                <span class="collapse-sign">&minus;</span>
+            </div>
+            <div class="inst-body">
+                <div class="note-alert">
+                    <span class="note-title">Note:</span>
+                    Kindly use Edge Chromium or Mozilla Firefox (version 93 to 110) or Google Chrome (version 88 to 111) or Microsoft Edge(version 87 to 110) browser to fill in the Application Form.<br><br>
+                    The Application Form is compatible with Android (version 4.0 and above) and iOS (version 9 and above)<br><br>
+                    Fields marked with <span class="req-star">*</span> are mandatory.
+                </div>
+                <p style="font-weight:bold;margin-bottom:8px;">Read the below instructions carefully, before filling the form:</p>
+                <ol style="padding-left:18px;">
+                    <li>On successful registration, you will receive the Login ID and Password on your registered email. Use these to login and fill your online application form.</li>
+                    <li>In case of any difficulties, you may contact the Helpdesk through Helpdesk tab after login and/or Phone No +91 7996335552 from 10 AM to 5 PM on all working days.</li>
+                    <li>Candidate are advised to submit only one application for a post.In case of submission of more than one application by a candidate to a post,the latest application shall only be considered.</li>
+                </ol>
+            </div>
+        </div>
+        <div>
+            <div class="reg-tab-header">REGISTRATION</div>
+            <div class="reg-form-box">
+                <div class="reg-sub-bar"><span>Register to get User ID and Password</span><span>&minus;</span></div>
+                <div class="reg-form-inner">
+                    <div class="form-row">
+                        <div class="form-col">
+                            <label>Post Name: <span class="req-star">*</span></label>
+                            <select id="regPostName" class="reg-select" onchange="document.getElementById('postCodeInput').value=this.value?'01':''">
+                                <option value="">--Select--</option>
+                                <option value="Junior Court Assistant">Junior Court Assistant</option>
+                            </select>
+                        </div>
+                        <div class="form-col">
+                            <label>Post Code: <span class="req-star">*</span></label>
+                            <input type="text" id="postCodeInput" class="reg-input" placeholder="Post Code" readonly>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-col">
+                            <label>Candidate's / Applicant's Full Name: <span class="req-star">*</span></label>
+                            <input type="text" id="regFullName" class="reg-input" placeholder="Candidate's / Applicant's Full Name">
+                        </div>
+                    </div>
+                    <div class="note-alert"><span class="note-title">Note:</span>(Please enter your name strictly as per your Matriculation/10th certificate/SSC).</div>
+                    <div class="form-row" style="margin-top:15px;">
+                        <div class="form-col">
+                            <label>Mobile Number: <span class="req-star">*</span></label>
+                            <div class="phone-group"><span class="phone-prefix">+91</span><input type="text" id="regMobile" maxlength="10" class="reg-input" placeholder="Mobile Number"></div>
+                        </div>
+                        <div class="form-col">
+                            <label>Confirm Mobile Number: <span class="req-star">*</span></label>
+                            <div class="phone-group"><span class="phone-prefix">+91</span><input type="text" id="regConfirmMobile" maxlength="10" class="reg-input" placeholder="Confirm Mobile Number"></div>
+                        </div>
+                        <div class="form-col">
+                            <label>Alternate Mobile Number:</label>
+                            <div class="phone-group"><span class="phone-prefix">+91</span><input type="text" id="regAltMobile" maxlength="10" class="reg-input" placeholder="Alternate Mobile Number"></div>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-col">
+                            <label>Email Address: <span class="req-star">*</span></label>
+                            <input type="email" id="regEmail" class="reg-input" placeholder="Email Address">
+                        </div>
+                        <div class="form-col">
+                            <label>Confirm Email Address: <span class="req-star">*</span></label>
+                            <input type="email" id="regConfirmEmail" class="reg-input" placeholder="Confirm Email Address">
+                        </div>
+                    </div>
+                    <div class="note-alert"><span class="note-title">Note:</span>You are required to provide your correct mobile no. and email address as all important communications are to be sent to you using the same.</div>
+                    <div style="text-align:center;margin:18px 0;">
+                        <button type="button" id="generateOtpBtn" class="btn-submit-blue" onclick="generateRealOTP()">GENERATE OTP</button>
+                        <div id="otpTimerDisplay" class="otp-timer-text" style="display:none;"></div>
+                    </div>
+                    <div class="otp-section" id="otpVerificationSection">
+                        <div style="font-size:12.5px;font-weight:bold;color:#16325c;margin-bottom:12px;"><i class="fa-solid fa-shield-halved"></i> Enter OTP sent to your Mobile Number:</div>
+                        <div class="form-row" style="margin-bottom:5px;">
+                            <div class="form-col">
+                                <label>Mobile OTP: <span class="req-star">*</span></label>
+                                <div class="otp-inline-group">
+                                    <input type="text" id="mobileOtpInput" maxlength="6" class="reg-input" style="max-width:180px;" placeholder="Enter 6-digit Mobile OTP">
+                                    <button type="button" id="btnVerifyMobile" class="btn-submit-blue" onclick="verifySingleOTP()">VALIDATE OTP</button>
+                                    <span class="verified-badge" id="mobileVerifiedBadge"><i class="fa-solid fa-circle-check"></i> Verified</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="decl-header">Declaration</div>
+                    <div class="decl-body">
+                        <p>I hereby declare that the above information is true to the best of my knowledge. I am aware that I will receive important information on my registered details. I agree that I have read and understood all the instructions specified in the advertisement and agree to abide by the same. Further, I agree that I have referred to the advertisement and ensured my eligibility before applying.</p>
+                        <div class="agree-check"><input type="checkbox" id="agreeCheck"><label for="agreeCheck">I Agree</label></div>
+                        <div class="captcha-section" style="margin-top:15px;">
+                            <div class="captcha-row">
+                                <canvas id="regCaptchaCanvas" class="captcha-canvas" width="145" height="46"></canvas>
+                                <div class="captcha-actions">
+                                    <i class="fa-solid fa-arrows-rotate captcha-refresh" onclick="drawCaptcha('regCaptchaCanvas')" title="Refresh Captcha"></i>
+                                    <span class="captcha-ok">OK</span>
+                                </div>
+                            </div>
+                            <div class="captcha-input-wrap">
+                                <input type="text" id="regCaptchaInput" class="captcha-input" placeholder="Type characters as shown in image">
+                                <i class="fa-solid fa-circle-info captcha-info-icon"></i>
+                            </div>
+                        </div>
+                        <div style="text-align:center;margin-top:15px;"><button type="button" class="btn-submit-blue" onclick="handleReverify()">RE-VERIFY</button></div>
+                    </div>
+                    <div class="reverify-box" id="reverifyBox">
+                        <div class="reverify-header">Re-verify Details (Please tick all checkboxes to confirm)</div>
+                        <table class="reverify-table">
+                            <tr><th>Post Name</th><td id="revPostName"></td><td><input type="checkbox" class="rev-check"></td></tr>
+                            <tr><th>Post Code</th><td id="revPostCode"></td><td><input type="checkbox" class="rev-check"></td></tr>
+                            <tr><th>Candidate's Full Name</th><td id="revFullName"></td><td><input type="checkbox" class="rev-check"></td></tr>
+                            <tr><th>Mobile Number</th><td id="revMobile"></td><td><input type="checkbox" class="rev-check"></td></tr>
+                            <tr><th>Email Address</th><td id="revEmail"></td><td><input type="checkbox" class="rev-check"></td></tr>
+                        </table>
+                        <div style="text-align:center;padding:15px;"><button type="button" class="btn-submit-blue" onclick="handleFinalSubmit()">SUBMIT</button></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer-light">Version 15.03.01</div>
+</div>
+
+<!-- 4. APPLICANT DETAILS DASHBOARD / FINAL PRINT VIEW -->
+<div id="applicant-details-view" class="page-view">
+    <div class="navbar no-print">
+        <div class="nav-title">Supreme Court of India Application Form</div>
+        <div class="nav-links">
+            <a class="btn-nav-light" id="btnGoToApp" onclick="goToApplicationForm()"><i class="fa-regular fa-pen-to-square"></i> GO TO APPLICATION</a>
+            <a class="btn-nav-light" onclick="logoutUser()"><i class="fa-solid fa-power-off"></i> LOGOUT</a>
+        </div>
+    </div>
+    <div class="reg-container" style="max-width:1180px;">
+        <div class="portal-tabs-row no-print">
+            <div class="portal-tab active">APPLICANT DETAILS</div>
+            <div class="portal-tab">HELPDESK</div>
+        </div>
+        <div class="reg-form-box" style="padding:18px;">
+            
+            <!-- Personal Details -->
+            <div class="summary-block">
+                <div class="summary-header">Personal Details</div>
+                <div class="summary-body">
+                    <div id="submittedPhotoContainer" style="display:none;margin-bottom:14px;">
+                        <div class="photo-box-print"><img id="printCandidatePhoto" src="" alt="Candidate Photo"></div>
+                        <div style="font-size:12px;color:#333;">Candidate Photo</div>
+                    </div>
+                    <div class="summary-grid-row">
+                        <div class="summary-item"><div class="s-label">Application Status</div><div class="s-value" id="dashAppStatus">Registered</div></div>
+                        <div class="summary-item"><div class="s-label">Application Number</div><div class="s-value" id="dashAppNo"></div></div>
+                    </div>
+                    <div class="summary-grid-row">
+                        <div class="summary-item"><div class="s-label">Candidate's / Applicant's Full Name:</div><div class="s-value" id="dashFullName"></div></div>
+                    </div>
+                    <div id="extraPersonalRows" style="display:none;">
+                        <div class="summary-grid-row">
+                            <div class="summary-item"><div class="s-label">Date of Birth</div><div class="s-value" id="prDob"></div></div>
+                            <div class="summary-item"><div class="s-label">Gender</div><div class="s-value" id="prGender"></div></div>
+                        </div>
+                        <div class="summary-grid-row">
+                            <div class="summary-item"><div class="s-label">Marital Status</div><div class="s-value" id="prMarital"></div></div>
+                            <div class="summary-item"><div class="s-label">Religion</div><div class="s-value" id="prReligion"></div></div>
+                        </div>
+                        <div class="summary-grid-row">
+                            <div class="summary-item"><div class="s-label">Father's Name</div><div class="s-value" id="prFather"></div></div>
+                            <div class="summary-item"><div class="s-label">Mother's Name</div><div class="s-value" id="prMother"></div></div>
+                        </div>
+                    </div>
+                    <div class="summary-grid-row">
+                        <div class="summary-item"><div class="s-label">Email ID</div><div class="s-value" id="dashEmail"></div></div>
+                        <div class="summary-item"><div class="s-label">Mobile Number</div><div class="s-value" id="dashMobile"></div></div>
+                    </div>
+                    <div id="extraGovIdRow" class="summary-grid-row" style="display:none;">
+                        <div class="summary-item"><div class="s-label">Government ID Card Details</div><div class="s-value" id="prGovType"></div></div>
+                        <div class="summary-item"><div class="s-label">Government ID Number</div><div class="s-value" id="prGovNo"></div></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Post Details -->
+            <div class="summary-block">
+                <div class="summary-header">Post Details</div>
+                <div class="summary-body">
+                    <div class="summary-grid-row">
+                        <div class="summary-item"><div class="s-label">Post Name</div><div class="s-value" id="dashPostName">Junior Court Assistant</div></div>
+                        <div class="summary-item"><div class="s-label">Post Code</div><div class="s-value" id="dashPostCode">01</div></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Full Submitted Sections (Hidden initially) -->
+            <div id="fullSubmittedDetailsContainer" style="display:none;">
+                <div class="summary-block">
+                    <div class="summary-header">Test City Preferences</div>
+                    <div class="summary-body">
+                        <div class="summary-grid-row">
+                            <div class="summary-item"><div class="s-label">Preferred Test City 1</div><div class="s-value" id="prCity1"></div></div>
+                            <div class="summary-item"><div class="s-label">Preferred Test City 2</div><div class="s-value" id="prCity2"></div></div>
+                        </div>
+                        <div class="summary-grid-row">
+                            <div class="summary-item"><div class="s-label">Preferred Test City 3</div><div class="s-value" id="prCity3"></div></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="summary-block">
+                    <div class="summary-header">Candidate Category Details</div>
+                    <div class="summary-body">
+                        <div class="summary-grid-row">
+                            <div class="summary-item"><div class="s-label">Nationality</div><div class="s-value">A citizen of India</div></div>
+                            <div class="summary-item"><div class="s-label">Reservation Category</div><div class="s-value" id="prCategory"></div></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="summary-block">
+                    <div class="summary-header">Person with Benchmark Disability Details</div>
+                    <div class="summary-body">
+                        <div class="summary-grid-row">
+                            <div class="summary-item"><div class="s-label">Are you a person with minimum 40% disability?</div><div class="s-value" id="prPwbd"></div></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="summary-block">
+                    <div class="summary-header">Ex-Servicemen Details</div>
+                    <div class="summary-body">
+                        <div class="summary-grid-row">
+                            <div class="summary-item"><div class="s-label">Are you an Ex-Servicemen (ESM) ?</div><div class="s-value" id="prExs"></div></div>
+                            <div class="summary-item"><div class="s-label">Are you a dependent of Freedom Fighter?</div><div class="s-value" id="prFf"></div></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="summary-block">
+                    <div class="summary-header">Departmental Details</div>
+                    <div class="summary-body">
+                        <div class="summary-grid-row">
+                            <div class="summary-item"><div class="s-label">Are you a departmental candidate of Registry of Supreme Court of India?</div><div class="s-value" id="prDept"></div></div>
+                            <div class="summary-item"><div class="s-label">Are you currently working in a Government Sector/PSU/Nationalized Bank etc?</div><div class="s-value">No</div></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="summary-block">
+                    <div class="summary-header">Bank Details for Application Fee Refund</div>
+                    <div class="summary-body">
+                        <div class="summary-grid-row">
+                            <div class="summary-item"><div class="s-label">Name of Account Holder</div><div class="s-value" id="prBankHolder"></div></div>
+                            <div class="summary-item"><div class="s-label">Bank Name</div><div class="s-value" id="prBankName"></div></div>
+                        </div>
+                        <div class="summary-grid-row">
+                            <div class="summary-item"><div class="s-label">Bank Branch</div><div class="s-value" id="prBankBranch"></div></div>
+                            <div class="summary-item"><div class="s-label">Bank Account Number</div><div class="s-value" id="prBankAcc"></div></div>
+                        </div>
+                        <div class="summary-grid-row">
+                            <div class="summary-item"><div class="s-label">Bank IFSC Code</div><div class="s-value" id="prBankIfsc"></div></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="summary-block">
+                    <div class="summary-header">Correspondence Address</div>
+                    <div class="summary-body">
+                        <div class="summary-grid-row">
+                            <div class="summary-item"><div class="s-label">Address Line 1</div><div class="s-value" id="prCorr1"></div></div>
+                            <div class="summary-item"><div class="s-label">Address Line 2</div><div class="s-value" id="prCorr2"></div></div>
+                        </div>
+                        <div class="summary-grid-row">
+                            <div class="summary-item"><div class="s-label">Country</div><div class="s-value" id="prCorrCountry"></div></div>
+                            <div class="summary-item"><div class="s-label">State</div><div class="s-value" id="prCorrState"></div></div>
+                        </div>
+                        <div class="summary-grid-row">
+                            <div class="summary-item"><div class="s-label">City/District</div><div class="s-value" id="prCorrDist"></div></div>
+                            <div class="summary-item"><div class="s-label">Pincode/Postal Code</div><div class="s-value" id="prCorrPin"></div></div>
+                        </div>
+                        <div class="summary-grid-row">
+                            <div class="summary-item"><div class="s-label">Is Permanent Address Same as Correspondence address?</div><div class="s-value" id="prSameAddr"></div></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="summary-block">
+                    <div class="summary-header">Permanent Address</div>
+                    <div class="summary-body">
+                        <div class="summary-grid-row">
+                            <div class="summary-item"><div class="s-label">Address Line 1</div><div class="s-value" id="prPerm1"></div></div>
+                            <div class="summary-item"><div class="s-label">Address Line 2</div><div class="s-value" id="prPerm2"></div></div>
+                        </div>
+                        <div class="summary-grid-row">
+                            <div class="summary-item"><div class="s-label">Country</div><div class="s-value" id="prPermCountry"></div></div>
+                            <div class="summary-item"><div class="s-label">State</div><div class="s-value" id="prPermState"></div></div>
+                        </div>
+                        <div class="summary-grid-row">
+                            <div class="summary-item"><div class="s-label">City/District</div><div class="s-value" id="prPermDist"></div></div>
+                            <div class="summary-item"><div class="s-label">Pincode/Postal Code</div><div class="s-value" id="prPermPin"></div></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="summary-block">
+                    <div class="summary-header">SSLC/SSC/Matriculation (10th) Details</div>
+                    <div class="summary-body">
+                        <div class="summary-grid-row">
+                            <div class="summary-item"><div class="s-label">Name of the Board/Council</div><div class="s-value" id="pr10Board"></div></div>
+                            <div class="summary-item"><div class="s-label">Qualification Name</div><div class="s-value" id="pr10Qual"></div></div>
+                        </div>
+                        <div class="summary-grid-row">
+                            <div class="summary-item"><div class="s-label">Year of Passing</div><div class="s-value" id="pr10Year"></div></div>
+                        </div>
+                        <div class="summary-grid-row">
+                            <div class="summary-item"><div class="s-label">Institute Name</div><div class="s-value" id="pr10Inst"></div></div>
+                            <div class="summary-item"><div class="s-label">Please select any of the following</div><div class="s-value" id="pr10Type"></div></div>
+                        </div>
+                        <div class="summary-grid-row">
+                            <div class="summary-item"><div class="s-label">Marks Obtained</div><div class="s-value" id="pr10Obt"></div></div>
+                            <div class="summary-item"><div class="s-label">Maximum Marks</div><div class="s-value" id="pr10Max"></div></div>
+                        </div>
+                        <div class="summary-grid-row">
+                            <div class="summary-item"><div class="s-label">Percentage of Marks (%)</div><div class="s-value" id="pr10Perc"></div></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="summary-block">
+                    <div class="summary-header">Intermediate (12th) Details</div>
+                    <div class="summary-body">
+                        <div class="summary-grid-row">
+                            <div class="summary-item"><div class="s-label">Name of the Board/Council</div><div class="s-value" id="pr12Board"></div></div>
+                            <div class="summary-item"><div class="s-label">Year of Passing</div><div class="s-value" id="pr12Year"></div></div>
+                        </div>
+                        <div class="summary-grid-row">
+                            <div class="summary-item"><div class="s-label">Institute Name</div><div class="s-value" id="pr12Inst"></div></div>
+                        </div>
+                        <div class="summary-grid-row">
+                            <div class="summary-item"><div class="s-label">Subjects</div><div class="s-value" id="pr12Subj"></div></div>
+                            <div class="summary-item"><div class="s-label">Please select any of the following</div><div class="s-value" id="pr12Type"></div></div>
+                        </div>
+                        <div class="summary-grid-row">
+                            <div class="summary-item"><div class="s-label">Maximum Marks</div><div class="s-value" id="pr12Max"></div></div>
+                            <div class="summary-item"><div class="s-label">Marks Obtained</div><div class="s-value" id="pr12Obt"></div></div>
+                        </div>
+                        <div class="summary-grid-row">
+                            <div class="summary-item"><div class="s-label">Percentage of Marks</div><div class="s-value" id="pr12Perc"></div></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="summary-block">
+                    <div class="summary-header">Essential Qualification Details</div>
+                    <div class="summary-body">
+                        <div class="summary-grid-row">
+                            <div class="summary-item"><div class="s-label">Qualification Degree</div><div class="s-value" id="prGradDeg"></div></div>
+                            <div class="summary-item"><div class="s-label">Institute passed from</div><div class="s-value" id="prGradInst"></div></div>
+                        </div>
+                        <div class="summary-grid-row">
+                            <div class="summary-item"><div class="s-label">Mode of Education</div><div class="s-value" id="prGradMode"></div></div>
+                            <div class="summary-item"><div class="s-label">Subjects</div><div class="s-value" id="prGradSubj"></div></div>
+                        </div>
+                        <div class="summary-grid-row">
+                            <div class="summary-item"><div class="s-label">Month and Year of Joining</div><div class="s-value" id="prGradJoin"></div></div>
+                            <div class="summary-item"><div class="s-label">Month and Year of Passing</div><div class="s-value" id="prGradPass"></div></div>
+                        </div>
+                        <div class="summary-grid-row">
+                            <div class="summary-item"><div class="s-label">Please select any of the following</div><div class="s-value" id="prGradType"></div></div>
+                            <div class="summary-item"><div class="s-label">Percentage of Marks</div><div class="s-value" id="prGradPerc"></div></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="summary-block">
+                    <div class="summary-header">Post Specific Experience Details</div>
+                    <div class="summary-body">
+                        <div class="summary-grid-row">
+                            <div class="summary-item"><div class="s-label">Do you have minimum speed of 35 w.p.m. in English Typing on Computer?</div><div class="s-value" id="prTyping"></div></div>
+                        </div>
+                        <div class="summary-grid-row">
+                            <div class="summary-item"><div class="s-label">Do you have Knowledge of Computer Operation?</div><div class="s-value" id="prComp"></div></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="summary-block">
+                    <div class="summary-header">Payment Details</div>
+                    <div class="summary-body">
+                        <div class="summary-grid-row">
+                            <div class="summary-item"><div class="s-label">Amount</div><div class="s-value" id="prPayAmt"></div></div>
+                            <div class="summary-item"><div class="s-label">Payment Mode</div><div class="s-value">online</div></div>
+                        </div>
+                        <div class="summary-grid-row">
+                            <div class="summary-item"><div class="s-label">Payment Status</div><div class="s-value">Payment Success</div></div>
+                            <div class="summary-item"><div class="s-label">Payment Transaction No.</div><div class="s-value" id="prPayTxn"></div></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Declaration -->
+            <div class="summary-block">
+                <div class="summary-header">Declaration</div>
+                <div class="summary-body">
+                    <ul class="decl-bullet-list" style="list-style:none;padding-left:0;">
+                        <li>I hereby, solemnly declare that information provided by me in the form is true, complete &amp; correct to the best of my knowledge and belief. If any of the information is found incorrect or distorted at any stage, I shall have no objection to cancellation of my candidature.</li>
+                        <li>I understand that my candidature is subject to the conditions laid down in the advertisement brochure. I further declare that I am not involved in any criminal case and/or no such case is pending against me in any court of law.</li>
+                        <li>I certify that I have read and understood the advertisement completely and fulfill the Application Form eligibility criteria as mentioned in the advertisement and undertake to produce original documents whenever necessary.</li>
+                        <li>I hereby solemnly declare that I will abide by the terms and conditions as mentioned in the Advertisement dated 30.09.2026 for recruitment to the post of Junior Court Assistant.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Documents Upload -->
+            <div class="summary-block" id="submittedDocsBlock" style="display:none;margin-bottom:0;">
+                <div class="summary-header">Documents Upload</div>
+                <div class="summary-body">
+                    <div class="sig-box-print"><img id="printCandidateSign" src="" alt="Signature"></div>
+                    <div style="font-size:12px;color:#333;margin-bottom:10px;">Signature</div>
+                    <table class="doc-view-table">
+                        <thead>
+                            <tr><th>Document</th><th style="width:180px;">View / Download</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>To view your copy of scanned SSLC/SSC/Matriculation certificate/Marksheet:</td><td><a id="linkDoc10" target="_blank">Click here.</a></td></tr>
+                            <tr><td>To view your copy of scanned Intermediate(12th) certificate/marksheet:</td><td><a id="linkDoc12" target="_blank">Click here.</a></td></tr>
+                            <tr><td>To view your copy of Essential Qualification Degree certificate:</td><td><a id="linkDocGrad" target="_blank">Click here.</a></td></tr>
+                            <tr><td>To view your copy of Category certificate:</td><td><a id="linkDocCat" target="_blank">Click here.</a></td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- PRINT BUTTON (Without Captcha) -->
+            <div class="print-section-wrap no-print" id="printSection" style="display:none; align-items:center; justify-content:center;">
+                <button type="button" class="btn-submit-blue" style="padding:8px 20px; font-size:12px;" onclick="window.print()">PRINT / DOWNLOAD PDF</button>
+            </div>
+        </div>
+    </div>
+    <div class="footer-light no-print">Version 15.03.01</div>
+</div>
+
+<!-- 5. APPLICATION FORM VIEW -->
+<div id="application-form-view" class="page-view">
+    <div class="navbar">
+        <div class="nav-title">Supreme Court of India Application Form</div>
+        <div class="nav-links"><a class="btn-nav-light" onclick="logoutUser()"><i class="fa-solid fa-power-off"></i> LOGOUT</a></div>
+    </div>
+    <div class="reg-container">
+        <div class="inst-box">
+            <div class="inst-header" onclick="toggleSectionBody(this)">
+                <span>Instructions <i class="fa-solid fa-circle-info" style="color:#1f648b;"></i></span>
+                <span class="collapse-sign">&minus;</span>
+            </div>
+            <div class="inst-body">
+                <div class="note-alert">
+                    <span class="note-title">Note:</span>
+                    Kindly use Edge Chromium or Mozilla Firefox (version 93 to 110) or Google Chrome (version 88 to 111) or Microsoft Edge(version 87 to 110) browser to fill in the Application Form.<br><br>
+                    The Application Form is compatible with Android (version 4.0 and above) and iOS (version 9 and above)<br><br>
+                    Fields marked with <span class="req-star">*</span> are mandatory.
+                </div>
+                <p style="font-weight:bold;margin-bottom:8px;">Read the below instructions carefully, before filling the form:</p>
+                <ol style="padding-left:18px;">
+                    <li>Please read the eligibility instructions carefully. Fees once deposited can not be refunded under any circumstances.</li>
+                    <li>The application for this post are 2 step process.<br>Step I - Registration and profile creation.<br>Step II - Login with credentials (you received in your registered email &amp; Mobile No), filling of Online Application form and payment of Application fees(If Applicable).</li>
+                    <li>In case of any difficulties, you may raise the issue through Helpdesk tab and/or Phone No +91 7996335552 from 10 AM to 5 PM on all working days.</li>
+                </ol>
+            </div>
+        </div>
+
+        <div class="portal-tabs-row">
+            <div class="portal-tab active" id="tabBtn1" onclick="trySwitchAppTab(1)">ELIGIBILITY CRITERIA</div>
+            <div class="portal-tab" id="tabBtn2" onclick="trySwitchAppTab(2)">COMMUNICATION DETAILS</div>
+            <div class="portal-tab" id="tabBtn3" onclick="trySwitchAppTab(3)">QUALIFICATION &amp; EXPERIENCE</div>
+            <div class="portal-tab" id="tabBtn4" onclick="trySwitchAppTab(4)">DOCUMENT AND PAYMENT</div>
+        </div>
+
+        <div class="reg-form-box" style="padding:18px;">
+            <!-- TAB 1: ELIGIBILITY CRITERIA -->
+            <div id="appTabContent1">
+                <div class="app-section-card">
+                    <div class="app-section-header" onclick="toggleSectionBody(this)"><span>Post Applied Details</span><span class="collapse-sign">&minus;</span></div>
+                    <div class="app-section-body">
+                        <div class="form-row"><div class="form-col"><label>Application Number <span class="req-star">*</span></label><input type="text" id="formAppNo" class="reg-input" readonly></div></div>
+                        <div class="form-row">
+                            <div class="form-col"><label>Post Name <span class="req-star">*</span></label><input type="text" id="formPostName" class="reg-input" value="Junior Court Assistant" readonly></div>
+                            <div class="form-col"><label>Post Code <span class="req-star">*</span></label><input type="text" id="formPostCode" class="reg-input" value="01" readonly></div>
+                            <div class="form-col"></div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-col">
+                                <label>Gender <span class="req-star">*</span></label>
+                                <select id="formGender" class="reg-select">
+                                    <option value="">Select Gender</option>
+                                    <option value="Male">Male</option>
+                                    <option value="Female">Female</option>
+                                    <option value="Transgender">Transgender</option>
+                                </select>
+                            </div>
+                            <div class="form-col"><label>Date of Birth (DD/MM/YYYY)<span class="req-star">*</span></label><input type="date" id="formDob" class="reg-input" onchange="calculateAgeOnDate()"></div>
+                            <div class="form-col"><label>Age as on 01.09.2026</label><input type="text" id="formAgeDisplay" class="reg-input" readonly style="background:transparent;border:none;font-weight:bold;"></div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-col">
+                                <label>Nationality <span class="req-star">*</span></label>
+                                <div class="radio-inline-group"><label><input type="radio" name="nationality" value="Indian" checked> A Citizen of India</label></div>
+                            </div>
+                        </div>
+                        <div class="form-row" style="margin-bottom:0;">
+                            <div class="form-col">
+                                <label>Reservation Category<span class="req-star">*</span></label>
+                                <select id="formCategory" class="reg-select" onchange="updateFeeAmount()">
+                                    <option value="">Reservation Category</option>
+                                    <option value="UR">Unreserved (UR)</option>
+                                    <option value="OBC(NCL)">OBC (Non-Creamy Layer)</option>
+                                    <option value="SC">Scheduled Caste (SC)</option>
+                                    <option value="ST">Scheduled Tribe (ST)</option>
+                                    <option value="EWS">Economically Weaker Section (EWS)</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="app-section-card">
+                    <div class="app-section-header" onclick="toggleSectionBody(this)"><span>Person with Benchmark Disability Details</span><span class="collapse-sign">&minus;</span></div>
+                    <div class="app-section-body">
+                        <div class="form-row" style="margin-bottom:0;">
+                            <div class="form-col" style="max-width:100%;">
+                                <label>Are you a person with minimum 40% disability?<span class="req-star">*</span></label>
+                                <div class="radio-inline-group">
+                                    <label><input type="radio" name="pwbd" value="Yes" onchange="updateFeeAmount()"> Yes</label>
+                                    <label><input type="radio" name="pwbd" value="No" onchange="updateFeeAmount()"> No</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="app-section-card">
+                    <div class="app-section-header" onclick="toggleSectionBody(this)"><span>Ex-Servicemen Details</span><span class="collapse-sign">&minus;</span></div>
+                    <div class="app-section-body">
+                        <div class="form-row">
+                            <div class="form-col" style="max-width:100%;">
+                                <label>Are you an Ex-Service man?<span class="req-star">*</span></label>
+                                <div class="radio-inline-group">
+                                    <label><input type="radio" name="exService" value="Yes" onchange="updateFeeAmount()"> Yes</label>
+                                    <label><input type="radio" name="exService" value="No" onchange="updateFeeAmount()"> No</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row" style="margin-bottom:0;">
+                            <div class="form-col" style="max-width:100%;">
+                                <label>Are you a dependent of Freedom Fighter?<span class="req-star">*</span></label>
+                                <div class="radio-inline-group">
+                                    <label><input type="radio" name="freedomFighter" value="Yes"> Yes</label>
+                                    <label><input type="radio" name="freedomFighter" value="No"> No</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="app-section-card">
+                    <div class="app-section-header" onclick="toggleSectionBody(this)"><span>Departmental Details</span><span class="collapse-sign">&minus;</span></div>
+                    <div class="app-section-body">
+                        <div class="form-row" style="margin-bottom:0;">
+                            <div class="form-col" style="max-width:100%;">
+                                <label>Are you a departmental candidate of Registry of Supreme Court of India?<span class="req-star">*</span></label>
+                                <div class="radio-inline-group">
+                                    <label><input type="radio" name="deptCandidate" value="Yes"> Yes</label>
+                                    <label><input type="radio" name="deptCandidate" value="No"> No</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="app-section-card">
+                    <div class="app-section-header" onclick="toggleSectionBody(this)"><span>Personal Details</span><span class="collapse-sign">&minus;</span></div>
+                    <div class="app-section-body">
+                        <div class="form-row">
+                            <div class="form-col"><label>Candidate's / Applicant's Full Name: <span class="req-star">*</span></label><input type="text" id="formFullName" class="reg-input" readonly></div>
+                            <div class="form-col"><label>Father's Name: <span class="req-star">*</span></label><input type="text" id="formFatherName" class="reg-input" placeholder="Father's Name"></div>
+                            <div class="form-col"><label>Mother's Name: <span class="req-star">*</span></label><input type="text" id="formMotherName" class="reg-input" placeholder="Mother's Name"></div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-col">
+                                <label>Marital Status: <span class="req-star">*</span></label>
+                                <select id="formMarital" class="reg-select">
+                                    <option value="">Marital Status</option>
+                                    <option value="Unmarried">Unmarried</option>
+                                    <option value="Married">Married</option>
+                                    <option value="Divorced">Divorced</option>
+                                    <option value="Widowed">Widowed</option>
+                                </select>
+                            </div>
+                            <div class="form-col">
+                                <label>Religion: <span class="req-star">*</span></label>
+                                <select id="formReligion" class="reg-select">
+                                    <option value="">Religion</option>
+                                    <option value="Hinduism">Hinduism</option>
+                                    <option value="Islam">Islam</option>
+                                    <option value="Sikhism">Sikhism</option>
+                                    <option value="Christianity">Christianity</option>
+                                    <option value="Jainism">Jainism</option>
+                                    <option value="Buddhism">Buddhism</option>
+                                    <option value="Others">Others</option>
+                                </select>
+                            </div>
+                            <div class="form-col">
+                                <label>Mobile Number: <span class="req-star">*</span></label>
+                                <div class="phone-group"><span class="phone-prefix">91</span><input type="text" id="formMobile" class="reg-input" readonly></div>
+                            </div>
+                        </div>
+                        <div class="form-row" style="margin-bottom:0;">
+                            <div class="form-col"><label>Email Address: <span class="req-star">*</span></label><input type="email" id="formEmail" class="reg-input" readonly></div>
+                            <div class="form-col">
+                                <label>Government ID Card Details<span class="req-star">*</span></label>
+                                <select id="formGovIdType" class="reg-select">
+                                    <option value="">Government ID Card Details</option>
+                                    <option value="Pan Card">Pan Card</option>
+                                    <option value="Voter ID">Voter ID Card</option>
+                                    <option value="Driving License">Driving License</option>
+                                    <option value="Passport">Passport</option>
+                                    <option value="Bank Passbook with Photo">Bank Passbook with Photograph</option>
+                                </select>
+                            </div>
+                            <div class="form-col"><label>Government ID Number<span class="req-star">*</span></label><input type="text" id="formGovIdNo" class="reg-input" placeholder="Government ID Number"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="app-section-card">
+                    <div class="app-section-header" onclick="toggleSectionBody(this)"><span>Test City Preference</span><span class="collapse-sign">&minus;</span></div>
+                    <div class="app-section-body">
+                        <div class="form-row"><div class="form-col"><label>Preferred Test City 1<span class="req-star">*</span></label><div class="searchable-select-wrap" id="wrap_formCity1"></div></div></div>
+                        <div class="form-row"><div class="form-col"><label>Preferred Test City 2<span class="req-star">*</span></label><div class="searchable-select-wrap" id="wrap_formCity2"></div></div></div>
+                        <div class="form-row"><div class="form-col"><label>Preferred Test City 3<span class="req-star">*</span></label><div class="searchable-select-wrap" id="wrap_formCity3"></div></div></div>
+                        <div class="disclaimer-text">
+                            <strong>DISCLAIMER</strong>
+                            Candidates have to choose three test city as preference. No change of test city will be allowed. However, Supreme Court of India reserves the right to change any of the above-mentioned test city at its discretion and also add or reduce the number of test cities.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="app-section-card">
+                    <div class="app-section-header" onclick="toggleSectionBody(this)"><span>Bank Details</span><span class="collapse-sign">&minus;</span></div>
+                    <div class="app-section-body">
+                        <div class="form-row">
+                            <div class="form-col"><label>Name of Account Holder: <span class="req-star">*</span></label><input type="text" id="bankHolderName" class="reg-input" placeholder="Name of Account Holder"></div>
+                            <div class="form-col"><label>Bank Name: <span class="req-star">*</span></label><input type="text" id="bankName" class="reg-input" placeholder="Bank Name"></div>
+                            <div class="form-col"><label>Bank Branch: <span class="req-star">*</span></label><input type="text" id="bankBranch" class="reg-input" placeholder="Bank Branch"></div>
+                        </div>
+                        <div class="form-row" style="margin-bottom:0;">
+                            <div class="form-col"><label>Bank Account Number: <span class="req-star">*</span></label><input type="text" id="bankAccNo" class="reg-input" placeholder="Bank Account Number"></div>
+                            <div class="form-col"><label>Bank IFSC Code: <span class="req-star">*</span></label><input type="text" id="bankIfsc" class="reg-input" placeholder="Bank IFSC Code"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="text-align:center;margin-top:10px;"><button type="button" class="btn-submit-blue" onclick="saveEligibilityAndNext()">SAVE &amp; NEXT</button></div>
+            </div>
+
+            <!-- TAB 2: COMMUNICATION DETAILS -->
+            <div id="appTabContent2" style="display:none;">
+                <div class="app-section-card">
+                    <div class="app-section-header" onclick="toggleSectionBody(this)"><span>Correspondence Address</span><span class="collapse-sign">&minus;</span></div>
+                    <div class="app-section-body">
+                        <div class="form-row">
+                            <div class="form-col"><label>Address Line 1 <span class="req-star">*</span></label><input type="text" id="corrAddr1" class="reg-input" placeholder="Address Line 1" oninput="syncPermanentAddress()"></div>
+                            <div class="form-col"><label>Address Line 2</label><input type="text" id="corrAddr2" class="reg-input" placeholder="Address Line 2" oninput="syncPermanentAddress()"></div>
+                            <div class="form-col">
+                                <label>Country <span class="req-star">*</span></label>
+                                <select id="corrCountry" class="reg-select" onchange="syncPermanentAddress()">
+                                    <option value="">Select Country</option>
+                                    <option value="India">India</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-col"><label>State <span class="req-star">*</span></label><select id="corrState" class="reg-select" onchange="syncPermanentAddress()"><option value="">Select State</option></select></div>
+                            <div class="form-col"><label>City/District <span class="req-star">*</span></label><input type="text" id="corrDistrict" class="reg-input" placeholder="Enter City/District" oninput="syncPermanentAddress()"></div>
+                            <div class="form-col"><label>Pincode/Postal Code <span class="req-star">*</span></label><input type="text" id="corrPincode" maxlength="6" class="reg-input" placeholder="Pincode/Postal Code" oninput="syncPermanentAddress()"></div>
+                        </div>
+                        <div class="form-row" style="margin-bottom:0;">
+                            <div class="form-col" style="max-width:100%;">
+                                <label>Is Permanent Address Same as Correspondence address? <span class="req-star">*</span></label>
+                                <div class="radio-inline-group">
+                                    <label><input type="radio" name="sameAddrRadio" value="Yes" onchange="toggleSameAddress()"> Yes</label>
+                                    <label><input type="radio" name="sameAddrRadio" value="No" onchange="toggleSameAddress()"> No</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="app-section-card">
+                    <div class="app-section-header" onclick="toggleSectionBody(this)"><span>Permanent Address</span><span class="collapse-sign">&minus;</span></div>
+                    <div class="app-section-body">
+                        <div class="form-row">
+                            <div class="form-col"><label>Address Line 1 <span class="req-star">*</span></label><input type="text" id="permAddr1" class="reg-input" placeholder="Address Line 1"></div>
+                            <div class="form-col"><label>Address Line 2</label><input type="text" id="permAddr2" class="reg-input" placeholder="Address Line 2"></div>
+                            <div class="form-col"><label>Country<span class="req-star">*</span></label><select id="permCountry" class="reg-select"><option value="">Select Country</option><option value="India">India</option></select></div>
+                        </div>
+                        <div class="form-row" style="margin-bottom:0;">
+                            <div class="form-col"><label>State<span class="req-star">*</span></label><select id="permState" class="reg-select"><option value="">Select State</option></select></div>
+                            <div class="form-col"><label>District<span class="req-star">*</span></label><input type="text" id="permDistrict" class="reg-input" placeholder="Enter District"></div>
+                            <div class="form-col"><label>Pincode/Postal Code<span class="req-star">*</span></label><input type="text" id="permPincode" maxlength="6" class="reg-input" placeholder="Pincode/Postal Code"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="text-align:center;margin-top:10px;display:flex;justify-content:center;gap:10px;">
+                    <button type="button" class="btn-submit-blue" onclick="switchAppTab(1)">BACK</button>
+                    <button type="button" class="btn-submit-blue" onclick="saveCommunicationAndNext()">SAVE &amp; NEXT</button>
+                </div>
+            </div>
+
+            <!-- TAB 3: QUALIFICATION & EXPERIENCE -->
+            <div id="appTabContent3" style="display:none;">
+                <div class="app-section-card">
+                    <div class="app-section-header" onclick="toggleSectionBody(this)"><span>SSLC/SSC/Matriculation (10th) Details</span><span class="collapse-sign">&minus;</span></div>
+                    <div class="app-section-body">
+                        <div class="form-row">
+                            <div class="form-col"><label>Name of the Board/Council<span class="req-star">*</span></label><input type="text" id="tenthBoard" class="reg-input" placeholder="Name of the Board/Council"></div>
+                            <div class="form-col"><label>Qualification Name<span class="req-star">*</span></label><div class="searchable-select-wrap" id="wrap_tenthQualName"></div></div>
+                            <div class="form-col"><label>Year of Passing <span class="req-star">*</span></label><div class="searchable-select-wrap" id="wrap_tenthYear"></div></div>
+                        </div>
+                        <div class="form-row" id="tenthRow2" style="margin-bottom:0;">
+                            <div class="form-col"><label>Institute Name <span class="req-star">*</span></label><input type="text" id="tenthInstitute" class="reg-input" placeholder="Institute Name"></div>
+                            <div class="form-col"><label>Please select any of the following <span class="req-star">*</span></label><div class="searchable-select-wrap" id="wrap_tenthMarksType"></div></div>
+                            <div class="form-col" id="tenthMarksObtCol" style="display:none;">
+                                <label id="tenthMarksObtLabel">Marks Obtained <span class="req-star">*</span></label>
+                                <input type="number" step="any" id="tenthMarksObt" class="reg-input" placeholder="Marks Obtained" oninput="calcPercentage('tenth')">
+                            </div>
+                        </div>
+                        <div class="form-row" id="tenthMarksRow3" style="display:none;margin-top:18px;margin-bottom:0;">
+                            <div class="form-col" id="tenthMaxMarksCol">
+                                <label id="tenthMaxMarksLabel">Maximum Marks <span class="req-star">*</span></label>
+                                <input type="number" step="any" id="tenthMaxMarks" class="reg-input" placeholder="Maximum Marks" oninput="calcPercentage('tenth')">
+                            </div>
+                            <div class="form-col" id="tenthPercCol">
+                                <label>Percentage of Marks (%)</label>
+                                <input type="text" id="tenthPercentage" class="reg-input" placeholder="Percentage of Marks (%)" readonly>
+                            </div>
+                            <div class="form-col"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="app-section-card">
+                    <div class="app-section-header" onclick="toggleSectionBody(this)"><span>Intermediate (12th) Details</span><span class="collapse-sign">&minus;</span></div>
+                    <div class="app-section-body">
+                        <div class="form-row">
+                            <div class="form-col"><label>Name of the Board/Council</label><input type="text" id="twelfthBoard" class="reg-input" placeholder="Name of the Board/Council"></div>
+                            <div class="form-col"><label>Year of Passing</label><div class="searchable-select-wrap" id="wrap_twelfthYear"></div></div>
+                            <div class="form-col"><label>Institute Name</label><input type="text" id="twelfthInstitute" class="reg-input" placeholder="Institute Name"></div>
+                        </div>
+                        <div class="form-row" id="twelfthRow2" style="margin-bottom:0;">
+                            <div class="form-col"><label>Subjects</label><input type="text" id="twelfthSubjects" class="reg-input" placeholder="Subjects"></div>
+                            <div class="form-col"><label>Please select any of the following</label><div class="searchable-select-wrap" id="wrap_twelfthMarksType"></div></div>
+                            <div class="form-col" id="twelfthMarksObtCol" style="display:none;">
+                                <label id="twelfthMarksObtLabel">Marks Obtained</label>
+                                <input type="number" step="any" id="twelfthMarksObt" class="reg-input" placeholder="Marks Obtained" oninput="calcPercentage('twelfth')">
+                            </div>
+                        </div>
+                        <div class="form-row" id="twelfthMarksRow3" style="display:none;margin-top:18px;margin-bottom:0;">
+                            <div class="form-col" id="twelfthMaxMarksCol">
+                                <label id="twelfthMaxMarksLabel">Maximum Marks</label>
+                                <input type="number" step="any" id="twelfthMaxMarks" class="reg-input" placeholder="Maximum Marks" oninput="calcPercentage('twelfth')">
+                            </div>
+                            <div class="form-col" id="twelfthPercCol">
+                                <label>Percentage of Marks (%)</label>
+                                <input type="text" id="twelfthPercentage" class="reg-input" placeholder="Percentage of Marks (%)" readonly>
+                            </div>
+                            <div class="form-col"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="app-section-card">
+                    <div class="app-section-header" onclick="toggleSectionBody(this)"><span>Essential Qualification Details</span><span class="collapse-sign">&minus;</span></div>
+                    <div class="app-section-body">
+                        <div class="form-row">
+                            <div class="form-col"><label>Degree Name <span class="req-star">*</span></label><div class="searchable-select-wrap" id="wrap_gradDegreeName"></div></div>
+                            <div class="form-col"><label>Institute Name <span class="req-star">*</span></label><input type="text" id="gradInstitute" class="reg-input" placeholder="Institute Name"></div>
+                            <div class="form-col"><label>Mode of Education<span class="req-star">*</span></label><div class="searchable-select-wrap" id="wrap_gradMode"></div></div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-col"><label>Subjects <span class="req-star">*</span></label><input type="text" id="gradSubjects" class="reg-input" placeholder="Subjects"></div>
+                            <div class="form-col">
+                                <label>Month and Year of Joining : <span class="req-star">*</span></label>
+                                <div class="calendar-input-wrap">
+                                    <input type="text" id="gradJoinDate" class="reg-input" placeholder="Month and Year of Joining" onfocus="this.type='month'" onblur="if(!this.value)this.type='text'">
+                                    <i class="fa-regular fa-calendar-days"></i>
+                                </div>
+                            </div>
+                            <div class="form-col">
+                                <label>Month and Year of Passing : <span class="req-star">*</span></label>
+                                <div class="calendar-input-wrap">
+                                    <input type="text" id="gradPassDate" class="reg-input" placeholder="Month and Year of Passing" onfocus="this.type='month'" onblur="if(!this.value)this.type='text'">
+                                    <i class="fa-regular fa-calendar-days"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row" id="gradRow3" style="margin-bottom:0;">
+                            <div class="form-col"><label>Please select any of the following <span class="req-star">*</span></label><div class="searchable-select-wrap" id="wrap_gradMarksType"></div></div>
+                            <div class="form-col" id="gradMarksObtCol" style="display:none;">
+                                <label id="gradMarksObtLabel">Marks Obtained <span class="req-star">*</span></label>
+                                <input type="number" step="any" id="gradMarksObt" class="reg-input" placeholder="Marks Obtained" oninput="calcPercentage('grad')">
+                            </div>
+                            <div class="form-col" id="gradMaxMarksCol" style="display:none;">
+                                <label id="gradMaxMarksLabel">Maximum Marks <span class="req-star">*</span></label>
+                                <input type="number" step="any" id="gradMaxMarks" class="reg-input" placeholder="Maximum Marks" oninput="calcPercentage('grad')">
+                            </div>
+                        </div>
+                        <div class="form-row" id="gradMarksRow4" style="display:none;margin-top:18px;margin-bottom:0;">
+                            <div class="form-col" id="gradPercCol">
+                                <label>Percentage of Marks (%)</label>
+                                <input type="text" id="gradPercentage" class="reg-input" placeholder="Percentage of Marks (%)" readonly>
+                            </div>
+                            <div class="form-col"></div>
+                            <div class="form-col"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="app-section-card">
+                    <div class="app-section-header" onclick="toggleSectionBody(this)"><span>Post Specific Experience</span><span class="collapse-sign">&minus;</span></div>
+                    <div class="app-section-body">
+                        <div class="form-row">
+                            <div class="form-col" style="max-width:100%;">
+                                <label>Do you have minimum speed of 35 w.p.m. in English Typing on Computer?<span class="req-star">*</span></label>
+                                <div class="radio-inline-group">
+                                    <label><input type="radio" name="typingSpeed" value="Yes"> Yes</label>
+                                    <label><input type="radio" name="typingSpeed" value="No"> No</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row" style="margin-bottom:0;">
+                            <div class="form-col" style="max-width:100%;">
+                                <label>Do you have knowledge of Computer Operation?<span class="req-star">*</span></label>
+                                <div class="radio-inline-group">
+                                    <label><input type="radio" name="computerKnowledge" value="Yes"> Yes</label>
+                                    <label><input type="radio" name="computerKnowledge" value="No"> No</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="text-align:center;margin-top:10px;display:flex;justify-content:center;gap:10px;">
+                    <button type="button" class="btn-submit-blue" onclick="switchAppTab(2)">BACK</button>
+                    <button type="button" class="btn-submit-blue" onclick="saveQualificationAndNext()">SAVE &amp; NEXT</button>
+                </div>
+            </div>
+
+            <!-- TAB 4: DOCUMENT AND PAYMENT -->
+            <div id="appTabContent4" style="display:none;">
+                <div class="app-section-card">
+                    <div class="app-section-header" onclick="toggleSectionBody(this)"><span>Documents Upload</span><span class="collapse-sign">&minus;</span></div>
+                    <div class="app-section-body" style="padding:8px 15px;">
+                        <div class="upload-row-item">
+                            <div class="upload-label-col">Upload the scanned copy of the recent passport size photo <span class="req-star">*</span><i class="fa-solid fa-circle-info upload-info-icon"></i></div>
+                            <div class="upload-action-col">
+                                <input type="file" id="docPhoto" style="display:none;" accept="image/*" onchange="markFileUploaded('docPhoto','badgePhoto')">
+                                <button type="button" class="btn-click-upload" onclick="document.getElementById('docPhoto').click()">CLICK HERE TO UPLOAD</button>
+                                <span class="file-status-badge" id="badgePhoto"><i class="fa-solid fa-circle-check"></i> Uploaded</span>
+                            </div>
+                        </div>
+                        <div class="upload-row-item">
+                            <div class="upload-label-col">Upload your scanned signature <span class="req-star">*</span><i class="fa-solid fa-circle-info upload-info-icon"></i></div>
+                            <div class="upload-action-col">
+                                <input type="file" id="docSign" style="display:none;" accept="image/*" onchange="markFileUploaded('docSign','badgeSign')">
+                                <button type="button" class="btn-click-upload" onclick="document.getElementById('docSign').click()">CLICK HERE TO UPLOAD</button>
+                                <span class="file-status-badge" id="badgeSign"><i class="fa-solid fa-circle-check"></i> Uploaded</span>
+                            </div>
+                        </div>
+                        <div class="upload-row-item">
+                            <div class="upload-label-col">Upload your scanned SSLC/SSC/Matriculation certificate/Marksheet <span class="req-star">*</span><i class="fa-solid fa-circle-info upload-info-icon"></i></div>
+                            <div class="upload-action-col">
+                                <input type="file" id="docTenthCert" style="display:none;" accept=".pdf,image/*" onchange="markFileUploaded('docTenthCert','badgeTenth')">
+                                <button type="button" class="btn-click-upload" onclick="document.getElementById('docTenthCert').click()">CLICK HERE TO UPLOAD</button>
+                                <span class="file-status-badge" id="badgeTenth"><i class="fa-solid fa-circle-check"></i> Uploaded</span>
+                            </div>
+                        </div>
+                        <div class="upload-row-item">
+                            <div class="upload-label-col">Upload your scanned Intermediate(12th) certificate/Marksheet <span class="req-star">*</span><i class="fa-solid fa-circle-info upload-info-icon"></i></div>
+                            <div class="upload-action-col">
+                                <input type="file" id="docTwelfthCert" style="display:none;" accept=".pdf,image/*" onchange="markFileUploaded('docTwelfthCert','badgeTwelfth')">
+                                <button type="button" class="btn-click-upload" onclick="document.getElementById('docTwelfthCert').click()">CLICK HERE TO UPLOAD</button>
+                                <span class="file-status-badge" id="badgeTwelfth"><i class="fa-solid fa-circle-check"></i> Uploaded</span>
+                            </div>
+                        </div>
+                        <div class="upload-row-item">
+                            <div class="upload-label-col">Upload your Essential Qualification Degree certificate <span class="req-star">*</span><i class="fa-solid fa-circle-info upload-info-icon"></i></div>
+                            <div class="upload-action-col">
+                                <input type="file" id="docGradCert" style="display:none;" accept=".pdf,image/*" onchange="markFileUploaded('docGradCert','badgeGrad')">
+                                <button type="button" class="btn-click-upload" onclick="document.getElementById('docGradCert').click()">CLICK HERE TO UPLOAD</button>
+                                <span class="file-status-badge" id="badgeGrad"><i class="fa-solid fa-circle-check"></i> Uploaded</span>
+                            </div>
+                        </div>
+                        <!-- Optional Category -->
+                        <div class="upload-row-item">
+                            <div class="upload-label-col">Upload your Category Certificate <i class="fa-solid fa-circle-info upload-info-icon"></i></div>
+                            <div class="upload-action-col">
+                                <input type="file" id="docCategoryCert" style="display:none;" accept=".pdf,image/*" onchange="markFileUploaded('docCategoryCert','badgeCat')">
+                                <button type="button" class="btn-click-upload" onclick="document.getElementById('docCategoryCert').click()">CLICK HERE TO UPLOAD</button>
+                                <span class="file-status-badge" id="badgeCat"><i class="fa-solid fa-circle-check"></i> Uploaded</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="app-section-card">
+                    <div class="app-section-header" onclick="toggleSectionBody(this)"><span>Payment Details</span><span class="collapse-sign">&minus;</span></div>
+                    <div class="app-section-body">
+                        <div style="font-size:12.5px;color:#333;margin-bottom:14px;line-height:2;">
+                            <div style="display:flex;max-width:450px;"><span style="width:240px;">Candidate's Name</span><span style="font-weight:bold;" id="paymentCandidateName">DEEPANSHU</span></div>
+                            <div style="display:flex;max-width:450px;"><span style="width:240px;">Applicable Registration Fee (Rs)</span><span style="font-weight:bold;" id="paymentFeeVal">1500</span></div>
+                        </div>
+                        <div class="note-alert" style="margin-bottom:0;"><span class="note-title">Note:</span>For more details on registration fee, please refer to the detailed Advertisement.</div>
+                    </div>
+                </div>
+
+                <div class="app-section-card">
+                    <div class="app-section-header" onclick="toggleSectionBody(this)"><span>Payment Mode</span><span class="collapse-sign">&minus;</span></div>
+                    <div class="app-section-body">
+                        <div style="font-size:12px;color:#333;margin-bottom:6px;">Choose your Payment Mode <span class="req-star">*</span></div>
+                        <div class="radio-inline-group" style="margin-top:0;"><label><input type="radio" name="paymentMode" value="Online" checked> Online</label></div>
+                    </div>
+                </div>
+
+                <div class="app-section-card">
+                    <div class="app-section-header" onclick="toggleSectionBody(this)"><span>Declaration</span><span class="collapse-sign">&minus;</span></div>
+                    <div class="app-section-body">
+                        <div style="display:flex;flex-direction:column;gap:12px;font-size:12px;line-height:1.6;">
+                            <div style="display:flex;gap:8px;align-items:flex-start;">
+                                <input type="checkbox" id="decl1" class="final-decl-chk" style="margin-top:3px;">
+                                <label for="decl1">I hereby solemnly declare that information provided by me in the application form is true, complete &amp; correct to the best of my knowledge and belief. If any of the information is found incorrect or distorted at any stage I shall have no objection to cancellation of my candidature.</label>
+                            </div>
+                            <div style="display:flex;gap:8px;align-items:flex-start;">
+                                <input type="checkbox" id="decl2" class="final-decl-chk" style="margin-top:3px;">
+                                <label for="decl2">I understand that my candidature is subject to the conditions laid down in the advertisement. I further declare that I am not involved in any criminal case and/or no such case is pending against me in any court of law.</label>
+                            </div>
+                            <div style="display:flex;gap:8px;align-items:flex-start;">
+                                <input type="checkbox" id="decl3" class="final-decl-chk" style="margin-top:3px;">
+                                <label for="decl3">I certify that I have read and understood the advertisement completely and fulfill the Application form eligibility criteria as mentioned in the advertisement and undertake to produce original documents whenever necessary.</label>
+                            </div>
+                            <div style="display:flex;gap:8px;align-items:flex-start;">
+                                <input type="checkbox" id="decl4" class="final-decl-chk" style="margin-top:3px;">
+                                <label for="decl4">I hereby solemnly declare that I will abide by the terms and conditions as mentioned in the Advertisement dated 30.09.2026 for recruitment to the post of Junior Court Assistant.</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="text-align:center;margin-top:15px;display:flex;justify-content:center;gap:12px;">
+                    <button type="button" class="btn-submit-blue" onclick="switchAppTab(3)">BACK</button>
+                    <button type="button" class="btn-submit-blue" onclick="previewApplication()">PREVIEW</button>
+                    <button type="button" class="btn-submit-blue" onclick="submitFinalApplication()">SUBMIT</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer-light">Version 15.03.01</div>
+</div>
+
+<!-- 6. BILLDESK PAYMENT GATEWAY -->
+<div id="payment-gateway-view" class="page-view">
+    <div class="bd-card">
+        <div class="bd-left">
+            <div class="bd-left-title">Payment Methods</div>
+            <div class="bd-method-item" onclick="alert('Due to high transaction use QR and payment')"><div class="bd-method-left"><i class="fa-regular fa-credit-card"></i><span>Credit / Debit Cards</span></div><i class="fa-solid fa-chevron-right" style="font-size:10px;color:#999;"></i></div>
+            <div class="bd-method-item" onclick="alert('Due to high transaction use QR and payment')"><div class="bd-method-left"><i class="fa-solid fa-building-columns"></i><span>Net Banking</span></div><i class="fa-solid fa-chevron-right" style="font-size:10px;color:#999;"></i></div>
+            <div class="bd-method-item active"><div class="bd-method-left"><i class="fa-solid fa-qrcode"></i><span>QR</span></div><i class="fa-solid fa-chevron-right" style="font-size:10px;color:#f37021;"></i></div>
+            <div class="bd-method-item" onclick="alert('Due to high transaction use QR and payment')"><div class="bd-method-left"><i class="fa-solid fa-mobile-screen-button"></i><span>UPI</span></div><i class="fa-solid fa-chevron-right" style="font-size:10px;color:#999;"></i></div>
+        </div>
+        <div class="bd-center">
+            <div class="bd-qr-title">Scan the QR using any UPI app</div>
+            <div class="bd-upi-id">du.cr5@ptyes</div>
+            <div class="bd-qr-box" title="Scan QR to complete payment"><img id="bdQrImg" src="" alt="QR"></div>
+            <div class="bd-timer-text">QR Code will expire in <span id="bdQrTimer">04:59</span> mins</div>
+            
+            <div class="captcha-section" style="margin-top:0; margin-bottom: 15px;">
+                <div class="captcha-row">
+                    <canvas id="paymentCaptchaCanvas" class="captcha-canvas" width="145" height="46"></canvas>
+                    <div class="captcha-actions">
+                        <i class="fa-solid fa-arrows-rotate captcha-refresh" onclick="drawCaptcha('paymentCaptchaCanvas')" title="Refresh Captcha"></i>
+                    </div>
+                </div>
+                <div class="captcha-input-wrap">
+                    <input type="text" id="paymentCaptchaInput" class="captcha-input" placeholder="Type numbers as shown in image" style="border: 1px solid #aaa;">
+                </div>
+            </div>
+
+            <button type="button" class="bd-pay-confirm-btn" onclick="completeBillDeskPayment()">I HAVE PAID / VERIFY PAYMENT</button>
+        </div>
+        <div class="bd-right">
+            <div>
+                <div class="bd-info-group"><div class="bd-info-label">Merchant Name</div><div class="bd-info-val">Supreme Court Recruitment</div></div>
+                <div class="bd-info-group"><div class="bd-info-label">Order ID</div><div class="bd-info-val" id="bdOrderId"></div></div>
+                <div class="bd-amount-row"><span style="font-size:12.5px;color:#666;">Payment Amount</span><span class="bd-amount-val" id="bdPayAmount"></span></div>
+            </div>
+            <div class="bd-footer-brand">
+                <div class="bd-logo-text"><span class="bd-logo-dot"></span>BillDesk</div>
+                <div class="bd-Cancel-links">Privacy Policy | Terms &amp; Conditions</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+const TWOFACTOR_API_KEY = "a88e1e6e-bf4d-11f1-af74-0200cd936042";
+const TWOFACTOR_TEMPLATE_NAME = "";
+
+const ALL_TEST_CITIES = ["--Select--","Agartala","Agra","Ahmedabad/Gandhinagar","Aizawl","Ajmer","Aligarh","Ambala","Amravati","Amritsar","Arrah","Asansol","Aurangabad","Ayodhya","Balasore","Bareilly","Bathinda","Belagavi(Belgaum)","Bengaluru","Berhampur-Ganjam","Bhagalpur","Bhilai","Bhopal","Bhubaneswar/Cuttack","Bikaner","Bilaspur","Bokaro Steel City","Burdwan","Chennai","Chhatrapati Sambhaji Nagar","Coimbatore","Darbhanga","Dehradun","Delhi/NCR","Dhanbad","Dhenkanal","Dibrugarh","Ernakulam","Gangtok","Gaya","Gorakhpur","Guntur","Guwahati","Gwalior","Haldwani","Hamirpur","Hazaribagh","Hubballi(Hubli)","Hyderabad","Imphal","Indore","Jabalpur","Jaipur","Jalgaon","Jammu","Jhansi","Jodhpur","Kakinada","Kalyani","Kangra","Kannur","Kanpur","Karimnagar","Khammam","Kohima","Kolhapur","Kolkata","Kollam","Kota","Kottayam","Kozhikode","Kullu","Kurnool","Kurukshetra","Latur","Leh","Lucknow","Ludhiana","Madurai","Mandi","Mangaluru(Mangalore)","Meerut","Mohali","Moradabad","Mumbai","Muzaffarnagar","Muzaffarpur","Mysuru(Mysore)","Nagpur","Naharlagun","Nanded","Nellore","Palampur","Pathankot","Patiala","Patna","Phagwara","Prayagraj","Pune","Purnea","Raipur","Rajahmundry","Rajkot","Ranchi","Roorkee","Rourkela","Salem","Samba","Sambalpur","Satna","Shillong","Shimla","Shivamogga(Shimoga)","Sikar","Siliguri","Srinagar","Surat","Thiruvananthapuram","Thrissur","Tiruchirappalli","Tirunelveli","Tirupathi","Udaipur","Udupi","Ujjain","Una","Vadodara","Varanasi","Vijayawada","Visakhapatnam","Vizianagaram","Warangal"];
+const PASSING_YEARS = ["--Select--"];
+for (let y = 2025; y >= 1975; y--) PASSING_YEARS.push(y.toString());
+const TENTH_QUAL_NAMES = ["--Select--","SSLC","SSC","Matriculation"];
+const MARKS_TYPE_OPTIONS = ["--Select--","Percentage","CGPA","Grade of Marks"];
+const DEGREE_NAME_OPTIONS = ["--Select--","Bachelor degree of a recognized University in India"];
+const MODE_OF_EDU_OPTIONS = ["--Select--","Full Time","Part Time","Correspondence"];
+const INDIAN_STATES = ["Andhra Pradesh","Arunachal Pradesh","Assam","Bihar","Chandigarh","Chhattisgarh","Delhi","Goa","Gujarat","Haryana","Himachal Pradesh","Jammu and Kashmir","Jharkhand","Karnataka","Kerala","Ladakh","Madhya Pradesh","Maharashtra","Manipur","Meghalaya","Mizoram","Nagaland","Odisha","Punjab","Rajasthan","Sikkim","Tamil Nadu","Telangana","Tripura","Uttar Pradesh","Uttarakhand","West Bengal"];
+
+const captchaStore = {};
+const customDropdownStore = {};
+const uploadedFilesData = { photoDataUrl: "", signDataUrl: "", cert10Url: "#", cert12Url: "#", certGradUrl: "#", certCatUrl: "#" };
+let regTwoFactorSessionId = null;
+let isMobileVerified = false;
+let regOtpTimer = null;
+let bdCountdownInterval = null;
+let currentAppTab = 1;
+const completedTabs = {1:false, 2:false, 3:false, 4:false};
+
+function getRegisteredUsers() { try { return JSON.parse(localStorage.getItem('sci_users_db') || '[]'); } catch(e) { return []; } }
+function saveRegisteredUsers(list) { localStorage.setItem('sci_users_db', JSON.stringify(list)); }
+function findExistingUser(mobile, email) {
+    const m = (mobile || '').trim(), e = (email || '').trim().toLowerCase();
+    return getRegisteredUsers().find(u => u.mobile === m || u.email.toLowerCase() === e);
+}
+function generateUniqueRegistrationNo() {
+    const users = getRegisteredUsers(); let id = "";
+    do { id = "SCIJ260" + Math.floor(100000 + Math.random() * 900000); } while (users.some(u => u.userId === id));
+    return id;
+}
+
+function createSearchableDropdown(fieldId, placeholder, optionsList, dropUp = false, onChange = null) {
+    const wrap = document.getElementById('wrap_' + fieldId);
+    if (!wrap) return;
+    customDropdownStore[fieldId] = {placeholder, options: optionsList, onChange};
+    wrap.innerHTML = `
+        <div class="searchable-select-Trigger" id="trig_${fieldId}" onclick="toggleCustomDropdown('${fieldId}')">
+            <span id="text_${fieldId}">${placeholder}</span><i class="fa-solid fa-caret-down"></i>
+        </div>
+        <input type="hidden" id="${fieldId}" value="">
+        <div class="searchable-dropdown-menu ${dropUp?'drop-up':''}" id="menu_${fieldId}">
+            <div class="searchable-search-box"><input type="text" id="search_${fieldId}" oninput="filterCustomDropdown('${fieldId}')" onclick="event.stopPropagation()"></div>
+            <ul class="searchable-options-list" id="list_${fieldId}"></ul>
+        </div>
+    `;
+    renderCustomDropdownOptions(fieldId, "");
+}
+function renderCustomDropdownOptions(fieldId, query) {
+    const cfg = customDropdownStore[fieldId];
+    if (!cfg) return;
+    const ul = document.getElementById('list_' + fieldId), cur = document.getElementById(fieldId).value, q = query.trim().toLowerCase();
+    ul.innerHTML = '';
+    cfg.options.forEach(opt => {
+        if (!q || opt.toLowerCase().includes(q)) {
+            const li = document.createElement('li'), sel = (cur === opt) || (!cur && opt === "--Select--");
+            li.className = 'searchable-option-item' + (sel ? ' selected' : ''); li.innerText = opt;
+            li.onclick = (e) => { e.stopPropagation(); selectCustomDropdownOption(fieldId, opt); };
+            ul.appendChild(li);
+        }
+    });
+}
+function toggleCustomDropdown(fieldId) {
+    Object.keys(customDropdownStore).forEach(id => { if (id !== fieldId) { const m = document.getElementById('menu_' + id); if (m) m.classList.remove('open'); } });
+    const menu = document.getElementById('menu_' + fieldId);
+    if (menu.classList.toggle('open')) {
+        const inp = document.getElementById('search_' + fieldId); inp.value = '';
+        renderCustomDropdownOptions(fieldId, ''); setTimeout(() => inp.focus(), 40);
+    }
+}
+function filterCustomDropdown(fieldId) { renderCustomDropdownOptions(fieldId, document.getElementById('search_' + fieldId).value); }
+function selectCustomDropdownOption(fieldId, selectedOpt) {
+    const cfg = customDropdownStore[fieldId], val = (selectedOpt === "--Select--") ? "" : selectedOpt;
+    document.getElementById(fieldId).value = val;
+    const txt = document.getElementById('text_' + fieldId);
+    txt.innerText = val || cfg.placeholder; txt.style.color = val ? '#222' : '#555';
+    document.getElementById('trig_' + fieldId).classList.remove('input-Error-highlight');
+    document.getElementById('menu_' + fieldId).classList.remove('open');
+    if (typeof cfg.onChange === 'function') cfg.onChange(val);
+}
+document.addEventListener('click', (e) => {
+    Object.keys(customDropdownStore).forEach(id => {
+        const w = document.getElementById('wrap_' + id), m = document.getElementById('menu_' + id);
+        if (w && m && !w.contains(e.target)) m.classList.remove('open');
+    });
+});
+
+function toggleSectionBody(headerEl) {
+    const b = headerEl.nextElementSibling, s = headerEl.querySelector('.collapse-sign');
+    if (!b) return;
+    const hide = b.style.display === 'none';
+    b.style.display = hide ? 'block' : 'none';
+    if (s) s.innerHTML = hide ? '&minus;' : '&#43;';
+}
+
+function handleMarksTypeChange(prefix, selectedType) {
+    const req = (prefix !== 'twelfth') ? ' <span class="req-star">*</span>' : '';
+    const obtCol = document.getElementById(prefix + 'MarksObtCol'), obtLbl = document.getElementById(prefix + 'MarksObtLabel'), obtInp = document.getElementById(prefix + 'MarksObt');
+    const maxCol = document.getElementById(prefix + 'MaxMarksCol'), maxLbl = document.getElementById(prefix + 'MaxMarksLabel'), maxInp = document.getElementById(prefix + 'MaxMarks');
+    const percCol = document.getElementById(prefix + 'PercCol'), percInp = document.getElementById(prefix + 'Percentage');
+    const extraRow = document.getElementById(prefix === 'grad' ? 'gradMarksRow4' : (prefix + 'MarksRow3'));
+
+    obtInp.value = ''; maxInp.value = ''; percInp.value = '';
+
+    if (selectedType === 'Percentage') {
+        obtCol.style.display = 'block'; obtLbl.innerHTML = 'Marks Obtained' + req; obtInp.placeholder = 'Marks Obtained'; obtInp.type = 'number';
+        maxCol.style.display = 'block'; maxLbl.innerHTML = 'Maximum Marks' + req; maxInp.placeholder = 'Maximum Marks';
+        percCol.style.display = 'block'; extraRow.style.display = 'flex';
+    } else if (selectedType === 'CGPA') {
+        obtCol.style.display = 'block'; obtLbl.innerHTML = 'CGPA Obtained' + req; obtInp.placeholder = 'CGPA Obtained'; obtInp.type = 'number';
+        maxCol.style.display = 'none'; percCol.style.display = 'none'; extraRow.style.display = 'none';
+    } else if (selectedType === 'Grade of Marks') {
+        obtCol.style.display = 'block'; obtLbl.innerHTML = 'Grade of Marks' + req; obtInp.placeholder = 'Grade of Marks'; obtInp.type = 'text';
+        maxCol.style.display = 'none'; percCol.style.display = 'none'; extraRow.style.display = 'none';
+    } else {
+        obtCol.style.display = 'none'; if (prefix === 'grad') maxCol.style.display = 'none'; extraRow.style.display = 'none';
+    }
+}
+
+function calcPercentage(prefix) {
+    if (document.getElementById(prefix + 'MarksType').value !== 'Percentage') return;
+    const obt = parseFloat(document.getElementById(prefix + 'MarksObt').value), max = parseFloat(document.getElementById(prefix + 'MaxMarks').value), percEl = document.getElementById(prefix + 'Percentage');
+    if (!isNaN(obt) && !isNaN(max) && max > 0) {
+        if (obt > max) { alert("Marks Obtained cannot be greater than Maximum Marks!"); document.getElementById(prefix + 'MarksObt').value = ''; percEl.value = ''; return; }
+        percEl.value = ((obt / max) * 100).toFixed(2);
+    } else { percEl.value = ''; }
+}
+
+function markFileUploaded(inputId, badgeId) {
+    const el = document.getElementById(inputId), b = document.getElementById(badgeId);
+    if (el && el.files && el.files.length > 0) {
+        if (b) b.style.display = 'inline-block';
+        const file = el.files[0], blobUrl = URL.createObjectURL(file);
+        if (inputId === 'docPhoto') { const r = new FileReader(); r.onload = (e) => { uploadedFilesData.photoDataUrl = e.target.result; }; r.readAsDataURL(file); }
+        else if (inputId === 'docSign') { const r = new FileReader(); r.onload = (e) => { uploadedFilesData.signDataUrl = e.target.result; }; r.readAsDataURL(file); }
+        else if (inputId === 'docTenthCert') uploadedFilesData.cert10Url = blobUrl;
+        else if (inputId === 'docTwelfthCert') uploadedFilesData.cert12Url = blobUrl;
+        else if (inputId === 'docGradCert') uploadedFilesData.certGradUrl = blobUrl;
+        else if (inputId === 'docCategoryCert') uploadedFilesData.certCatUrl = blobUrl;
+    } else { if (b) b.style.display = 'none'; }
+}
+
+function updateFeeAmount() {
+    const cat = document.getElementById('formCategory').value, feeEl = document.getElementById('paymentFeeVal');
+    if (!feeEl) return;
+    feeEl.innerText = (cat === 'UR' || cat === '') ? '1500' : '750';
+}
+
+function initAllDropdowns() {
+    createSearchableDropdown('formCity1', 'Preferred Test City 1', ALL_TEST_CITIES, true);
+    createSearchableDropdown('formCity2', 'Preferred Test City 2', ALL_TEST_CITIES, true);
+    createSearchableDropdown('formCity3', 'Preferred Test City 3', ALL_TEST_CITIES, true);
+
+    const cs = document.getElementById('corrState'), ps = document.getElementById('permState');
+    INDIAN_STATES.forEach(st => { cs.add(new Option(st, st)); ps.add(new Option(st, st)); });
+
+    createSearchableDropdown('tenthQualName', 'Qualification Name', TENTH_QUAL_NAMES, false);
+    createSearchableDropdown('tenthYear', 'Year of Passing', PASSING_YEARS, false);
+    createSearchableDropdown('tenthMarksType', 'Please select any of the following', MARKS_TYPE_OPTIONS, false, (v) => handleMarksTypeChange('tenth', v));
+
+    createSearchableDropdown('twelfthYear', 'Year of Passing', PASSING_YEARS, false);
+    createSearchableDropdown('twelfthMarksType', 'Please select any of the following', MARKS_TYPE_OPTIONS, false, (v) => handleMarksTypeChange('twelfth', v));
+
+    createSearchableDropdown('gradDegreeName', 'Degree Name', DEGREE_NAME_OPTIONS, false);
+    createSearchableDropdown('gradMode', 'Mode of Education', MODE_OF_EDU_OPTIONS, false);
+    createSearchableDropdown('gradMarksType', 'Please select any of the following', MARKS_TYPE_OPTIONS, false, (v) => handleMarksTypeChange('grad', v));
+}
+
+function toggleSameAddress() {
+    const sel = document.querySelector('input[name="sameAddrRadio"]:checked');
+    if (!sel) return;
+    const same = sel.value === 'Yes', ids = ['permAddr1','permAddr2','permCountry','permState','permDistrict','permPincode'];
+    if (same) { syncPermanentAddress(); ids.forEach(id => document.getElementById(id).disabled = true); }
+    else { ids.forEach(id => { const el = document.getElementById(id); el.disabled = false; el.value = ''; }); }
+}
+
+function syncPermanentAddress() {
+    const sel = document.querySelector('input[name="sameAddrRadio"]:checked');
+    if (!sel || sel.value !== 'Yes') return;
+    document.getElementById('permAddr1').value = document.getElementById('corrAddr1').value;
+    document.getElementById('permAddr2').value = document.getElementById('corrAddr2').value;
+    document.getElementById('permCountry').value = document.getElementById('corrCountry').value;
+    document.getElementById('permState').value = document.getElementById('corrState').value;
+    document.getElementById('permDistrict').value = document.getElementById('corrDistrict').value;
+    document.getElementById('permPincode').value = document.getElementById('corrPincode').value;
+}
+
+function checkInputField(id, labelName) {
+    const el = document.getElementById(id), val = el ? el.value.trim() : '', trig = document.getElementById('trig_' + id);
+    if (!val) {
+        if (trig) { trig.classList.add('input-Error-highlight'); trig.scrollIntoView({behavior:'smooth',block:'center'}); }
+        else if (el) { el.classList.add('input-Error-highlight'); el.focus(); el.scrollIntoView({behavior:'smooth',block:'center'}); }
+        alert(`Please fill / select the mandatory (*) field: "${labelName}"`);
+        return false;
+    }
+    if (trig) trig.classList.remove('input-Error-highlight'); if (el) el.classList.remove('input-Error-highlight');
+    return true;
+}
+
+function checkRadioGroup(radioName, labelName) {
+    if (!document.querySelector(`input[name="${radioName}"]:checked`)) {
+        const r = document.querySelector(`input[name="${radioName}"]`);
+        if (r) r.scrollIntoView({behavior:'smooth',block:'center'});
+        alert(`Please select an option for mandatory (*) field: "${labelName}"`);
+        return false;
+    }
+    return true;
+}
+
+function validateTab1() {
+    if (!checkInputField('formGender', 'Gender')) return false;
+    if (!checkInputField('formDob', 'Date of Birth')) return false;
+    if (!checkRadioGroup('nationality', 'Nationality')) return false;
+    if (!checkInputField('formCategory', 'Reservation Category')) return false;
+    if (!checkRadioGroup('pwbd', 'Are you a person with minimum 40% disability?')) return false;
+    if (!checkRadioGroup('exService', 'Are you an Ex-Service man?')) return false;
+    if (!checkRadioGroup('freedomFighter', 'Are you a dependent of Freedom Fighter?')) return false;
+    if (!checkRadioGroup('deptCandidate', 'Are you a departmental candidate of Registry of Supreme Court of India?')) return false;
+    if (!checkInputField('formFatherName', "Father's Name")) return false;
+    if (!checkInputField('formMotherName', "Mother's Name")) return false;
+    if (!checkInputField('formMarital', 'Marital Status')) return false;
+    if (!checkInputField('formReligion', 'Religion')) return false;
+    if (!checkInputField('formGovIdType', 'Government ID Card Details')) return false;
+    if (!checkInputField('formGovIdNo', 'Government ID Number')) return false;
+    if (!checkInputField('formCity1', 'Preferred Test City 1')) return false;
+    if (!checkInputField('formCity2', 'Preferred Test City 2')) return false;
+    if (!checkInputField('formCity3', 'Preferred Test City 3')) return false;
+
+    const c1 = document.getElementById('formCity1').value, c2 = document.getElementById('formCity2').value, c3 = document.getElementById('formCity3').value;
+    if (c1 === c2 || c1 === c3 || c2 === c3) { alert("Preferred Test City 1, 2, and 3 must be different cities!"); return false; }
+    if (!checkInputField('bankHolderName', 'Name of Account Holder')) return false;
+    if (!checkInputField('bankName', 'Bank Name')) return false;
+    if (!checkInputField('bankBranch', 'Bank Branch')) return false;
+    if (!checkInputField('bankAccNo', 'Bank Account Number')) return false;
+    if (!checkInputField('bankIfsc', 'Bank IFSC Code')) return false;
+    return true;
+}
+
+function validateTab2() {
+    if (!checkInputField('corrAddr1', 'Correspondence Address Line 1')) return false;
+    if (!checkInputField('corrCountry', 'Correspondence Country')) return false;
+    if (!checkInputField('corrState', 'Correspondence State')) return false;
+    if (!checkInputField('corrDistrict', 'Correspondence City/District')) return false;
+    if (!checkInputField('corrPincode', 'Correspondence Pincode/Postal Code')) return false;
+    if (!checkRadioGroup('sameAddrRadio', 'Is Permanent Address Same as Correspondence address?')) return false;
+    if (!checkInputField('permAddr1', 'Permanent Address Line 1')) return false;
+    if (!checkInputField('permCountry', 'Permanent Country')) return false;
+    if (!checkInputField('permState', 'Permanent State')) return false;
+    if (!checkInputField('permDistrict', 'Permanent District')) return false;
+    if (!checkInputField('permPincode', 'Permanent Pincode/Postal Code')) return false;
+    return true;
+}
+
+function validateTab3() {
+    if (!checkInputField('tenthBoard', '10th Name of the Board/Council')) return false;
+    if (!checkInputField('tenthQualName', '10th Qualification Name')) return false;
+    if (!checkInputField('tenthYear', '10th Year of Passing')) return false;
+    if (!checkInputField('tenthInstitute', '10th Institute Name')) return false;
+    if (!checkInputField('tenthMarksType', '10th Please select any of the following')) return false;
+
+    const tType = document.getElementById('tenthMarksType').value;
+    if (tType === 'Percentage') {
+        if (!checkInputField('tenthMarksObt', '10th Marks Obtained')) return false;
+        if (!checkInputField('tenthMaxMarks', '10th Maximum Marks')) return false;
+    } else if (tType === 'CGPA' || tType === 'Grade of Marks') {
+        if (!checkInputField('tenthMarksObt', '10th ' + tType)) return false;
+    }
+
+    if (!checkInputField('gradDegreeName', 'Essential Qualification - Degree Name')) return false;
+    if (!checkInputField('gradInstitute', 'Essential Qualification - Institute Name')) return false;
+    if (!checkInputField('gradMode', 'Essential Qualification - Mode of Education')) return false;
+    if (!checkInputField('gradSubjects', 'Essential Qualification - Subjects')) return false;
+    if (!checkInputField('gradJoinDate', 'Essential Qualification - Month and Year of Joining')) return false;
+    if (!checkInputField('gradPassDate', 'Essential Qualification - Month and Year of Passing')) return false;
+    if (!checkInputField('gradMarksType', 'Essential Qualification - Please select any of the following')) return false;
+
+    const gType = document.getElementById('gradMarksType').value;
+    if (gType === 'Percentage') {
+        if (!checkInputField('gradMarksObt', 'Essential Qualification - Marks Obtained')) return false;
+        if (!checkInputField('gradMaxMarks', 'Essential Qualification - Maximum Marks')) return false;
+    } else if (gType === 'CGPA' || gType === 'Grade of Marks') {
+        if (!checkInputField('gradMarksObt', 'Essential Qualification - ' + gType)) return false;
+    }
+
+    if (!checkRadioGroup('typingSpeed', 'Do you have minimum speed of 35 w.p.m. in English Typing on Computer?')) return false;
+    if (!checkRadioGroup('computerKnowledge', 'Do you have knowledge of Computer Operation?')) return false;
+    return true;
+}
+
+function validateTab4() {
+    const files = [{id:'docPhoto', label:'Recent passport size photo'}, {id:'docSign', label:'Scanned signature'}, {id:'docTenthCert', label:'SSLC/SSC/Matriculation certificate/Marksheet'}, {id:'docGradCert', label:'Essential Qualification Degree certificate'}];
+    for (let f of files) {
+        const el = document.getElementById(f.id);
+        if (!el.files || el.files.length === 0) {
+            alert(`Please upload mandatory (*) document: "${f.label}"`);
+            el.parentElement.scrollIntoView({behavior:'smooth',block:'center'}); return false;
+        }
+    }
+    for (let chk of document.querySelectorAll('.final-decl-chk')) {
+        if (!chk.checked) {
+            alert("Please tick all 4 Declaration checkboxes before proceeding!");
+            chk.scrollIntoView({behavior:'smooth',block:'center'}); return false;
+        }
+    }
+    return true;
+}
+
+function saveEligibilityAndNext() { if (!validateTab1()) return; completedTabs[1] = true; alert("Data Saved Successfully."); switchAppTab(2); }
+function saveCommunicationAndNext() { if (!validateTab2()) return; completedTabs[2] = true; alert("Data Saved Successfully."); switchAppTab(3); }
+function saveQualificationAndNext() { if (!validateTab3()) return; completedTabs[3] = true; alert("Data Saved Successfully."); switchAppTab(4); }
+
+function previewApplication() {
+    const content = document.getElementById('previewModalContent');
+    content.innerHTML = `
+        <table class="reverify-table">
+            <tr><th>Application No.</th><td>${document.getElementById('formAppNo').value}</td></tr>
+            <tr><th>Post Name</th><td>${document.getElementById('formPostName').value} (Code: 01)</td></tr>
+            <tr><th>Candidate's Name</th><td>${document.getElementById('formFullName').value}</td></tr>
+            <tr><th>Gender & DOB</th><td>${document.getElementById('formGender').value} | ${document.getElementById('formDob').value}</td></tr>
+            <tr><th>Category</th><td>${document.getElementById('formCategory').value}</td></tr>
+            <tr><th>Father's / Mother's Name</th><td>${document.getElementById('formFatherName').value} / ${document.getElementById('formMotherName').value}</td></tr>
+            <tr><th>Test Cities (1, 2, 3)</th><td>1. ${document.getElementById('formCity1').value} | 2. ${document.getElementById('formCity2').value} | 3. ${document.getElementById('formCity3').value}</td></tr>
+            <tr><th>Correspondence Address</th><td>${document.getElementById('corrAddr1').value}, ${document.getElementById('corrDistrict').value}, ${document.getElementById('corrState').value} - ${document.getElementById('corrPincode').value}</td></tr>
+            <tr><th>10th Board & Year</th><td>${document.getElementById('tenthBoard').value} (${document.getElementById('tenthYear').value})</td></tr>
+            <tr><th>Graduation Degree & Institute</th><td>${document.getElementById('gradDegreeName').value} - ${document.getElementById('gradInstitute').value}</td></tr>
+            <tr><th>Applicable Fee (Rs)</th><td>Rs. ${document.getElementById('paymentFeeVal').innerText}/-</td></tr>
+        </table>
+    `;
+    document.getElementById('previewModalOverlay').style.display = 'flex';
+}
+
+function closePreviewModal() { document.getElementById('previewModalOverlay').style.display = 'none'; }
+
+function submitFinalApplication() {
+    if (!validateTab4()) return;
+    completedTabs[4] = true;
+
+    const appNo = document.getElementById('formAppNo').value || 'SCIJ260006537';
+    const fee = document.getElementById('paymentFeeVal').innerText || '1500';
+    const now = new Date();
+    const ts = now.getFullYear().toString() + String(now.getMonth()+1).padStart(2,'0') + String(now.getDate()).padStart(2,'0') + String(now.getHours()).padStart(2,'0') + String(now.getMinutes()).padStart(2,'0') + String(now.getSeconds()).padStart(2,'0') + '01';
+
+    document.getElementById('bdOrderId').innerText = appNo + ts;
+    document.getElementById('bdPayAmount').innerText = '₹' + fee;
+
+    const upiUri = `upi://pay?pa=du.cr5@ptyes&pn=Supreme%20Court%20Recruitment&am=${fee}&cu=INR`;
+    document.getElementById('bdQrImg').src = `https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=${encodeURIComponent(upiUri)}`;
+
+    document.getElementById('commonTopBanner').style.display = 'none';
+    showView('payment-gateway');
+    drawCaptcha('paymentCaptchaCanvas');
+    document.getElementById('paymentCaptchaInput').value = '';
+
+    if (bdCountdownInterval) clearInterval(bdCountdownInterval);
+    let totalSec = 299;
+    const timerEl = document.getElementById('bdQrTimer');
+    bdCountdownInterval = setInterval(() => {
+        const m = String(Math.floor(totalSec / 60)).padStart(2, '0'), s = String(totalSec % 60).padStart(2, '0');
+        timerEl.innerText = `${m}:${s}`;
+        if (totalSec <= 0) clearInterval(bdCountdownInterval);
+        totalSec--;
+    }, 1000);
+}
+
+function formatDobPretty(dateStr) {
+    if (!dateStr) return '';
+    const months = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"], d = new Date(dateStr);
+    if (isNaN(d)) return dateStr;
+    return `${String(d.getDate()).padStart(2,'0')}/${months[d.getMonth()]}/${d.getFullYear()}`;
+}
+
+function formatMonthYear(val) {
+    if (!val || !val.includes('-')) return val;
+    const parts = val.split('-'); return `${parts[1]}/${parts[0]}`;
+}
+
+function completeBillDeskPayment() {
+    const cap = document.getElementById('paymentCaptchaInput').value.trim();
+    if (cap !== captchaStore['paymentCaptchaCanvas']) {
+        alert("Invalid Captcha! Please type the exact numbers shown in the image.");
+        drawCaptcha('paymentCaptchaCanvas'); document.getElementById('paymentCaptchaInput').value = '';
+        document.getElementById('paymentCaptchaInput').focus(); return;
+    }
+
+    if (bdCountdownInterval) clearInterval(bdCountdownInterval);
+    document.getElementById('commonTopBanner').style.display = 'block';
+
+    document.getElementById('dashAppStatus').innerText = 'Payment Success';
+    document.getElementById('btnGoToApp').style.display = 'none';
+
+    if (uploadedFilesData.photoDataUrl) { document.getElementById('printCandidatePhoto').src = uploadedFilesData.photoDataUrl; document.getElementById('submittedPhotoContainer').style.display = 'block'; }
+    if (uploadedFilesData.signDataUrl) { document.getElementById('printCandidateSign').src = uploadedFilesData.signDataUrl; }
+
+    document.getElementById('extraPersonalRows').style.display = 'block';
+    document.getElementById('extraGovIdRow').style.display = 'flex';
+    document.getElementById('fullSubmittedDetailsContainer').style.display = 'block';
+    document.getElementById('submittedDocsBlock').style.display = 'block';
+    document.getElementById('printSection').style.display = 'flex';
+
+    document.getElementById('prDob').innerText = formatDobPretty(document.getElementById('formDob').value);
+    document.getElementById('prGender').innerText = document.getElementById('formGender').value;
+    document.getElementById('prMarital').innerText = document.getElementById('formMarital').value;
+    document.getElementById('prReligion').innerText = document.getElementById('formReligion').value;
+    document.getElementById('prFather').innerText = document.getElementById('formFatherName').value.toUpperCase();
+    document.getElementById('prMother').innerText = document.getElementById('formMotherName').value.toUpperCase();
+    document.getElementById('prGovType').innerText = document.getElementById('formGovIdType').value;
+    document.getElementById('prGovNo').innerText = document.getElementById('formGovIdNo').value.toUpperCase();
+
+    document.getElementById('prCity1').innerText = document.getElementById('formCity1').value;
+    document.getElementById('prCity2').innerText = document.getElementById('formCity2').value;
+    document.getElementById('prCity3').innerText = document.getElementById('formCity3').value;
+    document.getElementById('prCategory').innerText = document.getElementById('formCategory').value;
+
+    const pwbdVal = document.querySelector('input[name="pwbd"]:checked'), exsVal = document.querySelector('input[name="exService"]:checked'), ffVal = document.querySelector('input[name="freedomFighter"]:checked'), deptVal = document.querySelector('input[name="deptCandidate"]:checked'), sameAddrVal = document.querySelector('input[name="sameAddrRadio"]:checked'), typVal = document.querySelector('input[name="typingSpeed"]:checked'), compVal = document.querySelector('input[name="computerKnowledge"]:checked');
+
+    document.getElementById('prPwbd').innerText = pwbdVal ? pwbdVal.value : 'No';
+    document.getElementById('prExs').innerText = exsVal ? exsVal.value : 'No';
+    document.getElementById('prFf').innerText = ffVal ? ffVal.value : 'No';
+    document.getElementById('prDept').innerText = deptVal ? deptVal.value : 'No';
+
+    document.getElementById('prBankHolder').innerText = document.getElementById('bankHolderName').value.toUpperCase();
+    document.getElementById('prBankName').innerText = document.getElementById('bankName').value.toUpperCase();
+    document.getElementById('prBankBranch').innerText = document.getElementById('bankBranch').value.toUpperCase();
+    document.getElementById('prBankAcc').innerText = document.getElementById('bankAccNo').value;
+    document.getElementById('prBankIfsc').innerText = document.getElementById('bankIfsc').value.toUpperCase();
+
+    document.getElementById('prCorr1').innerText = document.getElementById('corrAddr1').value;
+    document.getElementById('prCorr2').innerText = document.getElementById('corrAddr2').value;
+    document.getElementById('prCorrCountry').innerText = document.getElementById('corrCountry').value;
+    document.getElementById('prCorrState').innerText = document.getElementById('corrState').value;
+    document.getElementById('prCorrDist').innerText = document.getElementById('corrDistrict').value;
+    document.getElementById('prCorrPin').innerText = document.getElementById('corrPincode').value;
+    document.getElementById('prSameAddr').innerText = sameAddrVal ? sameAddrVal.value : 'Yes';
+
+    document.getElementById('prPerm1').innerText = document.getElementById('permAddr1').value;
+    document.getElementById('prPerm2').innerText = document.getElementById('permAddr2').value;
+    document.getElementById('prPermCountry').innerText = document.getElementById('permCountry').value;
+    document.getElementById('prPermState').innerText = document.getElementById('permState').value;
+    document.getElementById('prPermDist').innerText = document.getElementById('permDistrict').value;
+    document.getElementById('prPermPin').innerText = document.getElementById('permPincode').value;
+
+    document.getElementById('pr10Board').innerText = document.getElementById('tenthBoard').value.toUpperCase();
+    document.getElementById('pr10Qual').innerText = document.getElementById('tenthQualName').value;
+    document.getElementById('pr10Year').innerText = document.getElementById('tenthYear').value;
+    document.getElementById('pr10Inst').innerText = document.getElementById('tenthInstitute').value.toUpperCase();
+    document.getElementById('pr10Type').innerText = document.getElementById('tenthMarksType').value;
+    document.getElementById('pr10Obt').innerText = document.getElementById('tenthMarksObt').value;
+    document.getElementById('pr10Max').innerText = document.getElementById('tenthMaxMarks').value || '-';
+    document.getElementById('pr10Perc').innerText = document.getElementById('tenthPercentage').value || document.getElementById('tenthMarksObt').value;
+
+    document.getElementById('pr12Board').innerText = document.getElementById('twelfthBoard').value.toUpperCase() || '-';
+    document.getElementById('pr12Year').innerText = document.getElementById('twelfthYear').value || '-';
+    document.getElementById('pr12Inst').innerText = document.getElementById('twelfthInstitute').value.toUpperCase() || '-';
+    document.getElementById('pr12Subj').innerText = document.getElementById('twelfthSubjects').value.toUpperCase() || '-';
+    document.getElementById('pr12Type').innerText = document.getElementById('twelfthMarksType').value || '-';
+    document.getElementById('pr12Max').innerText = document.getElementById('twelfthMaxMarks').value || '-';
+    document.getElementById('pr12Obt').innerText = document.getElementById('twelfthMarksObt').value || '-';
+    document.getElementById('pr12Perc').innerText = document.getElementById('twelfthPercentage').value || '-';
+
+    document.getElementById('prGradDeg').innerText = document.getElementById('gradDegreeName').value;
+    document.getElementById('prGradInst').innerText = document.getElementById('gradInstitute').value.toUpperCase();
+    document.getElementById('prGradMode').innerText = document.getElementById('gradMode').value;
+    document.getElementById('prGradSubj').innerText = document.getElementById('gradSubjects').value.toUpperCase();
+    document.getElementById('prGradJoin').innerText = formatMonthYear(document.getElementById('gradJoinDate').value);
+    document.getElementById('prGradPass').innerText = formatMonthYear(document.getElementById('gradPassDate').value);
+    document.getElementById('prGradType').innerText = document.getElementById('gradMarksType').value;
+    document.getElementById('prGradPerc').innerText = document.getElementById('gradPercentage').value || document.getElementById('gradMarksObt').value;
+
+    document.getElementById('prTyping').innerText = typVal ? typVal.value : 'Yes';
+    document.getElementById('prComp').innerText = compVal ? compVal.value : 'Yes';
+
+    document.getElementById('prPayAmt').innerText = document.getElementById('paymentFeeVal').innerText;
+    const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789'; let txn = 'EHD5K';
+    for (let i = 0; i < 9; i++) txn += chars.charAt(Math.floor(Math.random() * chars.length));
+    document.getElementById('prPayTxn').innerText = txn;
+
+    document.getElementById('linkDoc10').href = uploadedFilesData.cert10Url;
+    document.getElementById('linkDoc12').href = uploadedFilesData.cert12Url;
+    document.getElementById('linkDocGrad').href = uploadedFilesData.certGradUrl;
+    document.getElementById('linkDocCat').href = uploadedFilesData.certCatUrl;
+
+    navigateTo('applicant-details');
+}
+
+function trySwitchAppTab(targetTab) {
+    if (targetTab > currentAppTab) {
+        for (let s = 1; s < targetTab; s++) {
+            if (s === 1 && !validateTab1()) return;
+            if (s === 2 && !validateTab2()) return;
+            if (s === 3 && !validateTab3()) return;
+            completedTabs[s] = true;
+        }
+    }
+    switchAppTab(targetTab);
+}
+
+function switchAppTab(tabIndex) {
+    currentAppTab = tabIndex;
+    for (let i = 1; i <= 4; i++) {
+        document.getElementById('appTabContent' + i).style.display = (i === tabIndex) ? 'block' : 'none';
+        const btn = document.getElementById('tabBtn' + i);
+        btn.classList.remove('active', 'completed');
+        if (i === tabIndex) btn.classList.add('active');
+        else if (completedTabs[i]) btn.classList.add('completed');
+    }
+    if (tabIndex === 4) { updateFeeAmount(); }
+    window.scrollTo(0, 0);
+}
+
+function drawCaptcha(canvasId) {
+    const canvas = document.getElementById(canvasId);
+    if (!canvas) return;
+    const ctx = canvas.getContext('2d');
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+    const grad = ctx.createLinearGradient(0, 0, canvas.width, canvas.height);
+    grad.addColorStop(0, '#d5deef'); grad.addColorStop(0.6, '#8ea6ce'); grad.addColorStop(1, '#6882b2');
+    ctx.fillStyle = grad; ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+    let text = '';
+    if (canvasId === 'paymentCaptchaCanvas') {
+        const digits = '0123456789';
+        for (let i = 0; i < 5; i++) text += digits.charAt(Math.floor(Math.random() * digits.length));
+    } else {
+        const chars = '23456789abcdefghjkmnpqrstuvwxyz';
+        for (let i = 0; i < 7; i++) text += chars.charAt(Math.floor(Math.random() * chars.length));
+    }
+    captchaStore[canvasId] = text;
+
+    ctx.font = 'italic 18px Arial'; ctx.fillStyle = '#222';
+    const step = (canvasId === 'paymentCaptchaCanvas') ? 22 : 17;
+    for (let i = 0; i < text.length; i++) {
+        ctx.save();
+        ctx.translate(16 + i * step, 30 + (Math.random() * 6 - 3));
+        ctx.rotate((Math.random() - 0.5) * 0.3);
+        ctx.fillText(text[i], 0, 0);
+        ctx.restore();
+    }
+
+    ctx.beginPath(); ctx.moveTo(5, 8 + Math.random() * 8); ctx.quadraticCurveTo(65, 25 + Math.random() * 12, 140, 20 + Math.random() * 10); ctx.strokeStyle = '#111'; ctx.lineWidth = 1.6; ctx.stroke();
+}
+
+function startCooldown(btnId, timerId, timerRefSetter, seconds = 60, resendLabel = 'RESEND OTP') {
+    const btn = document.getElementById(btnId), timerDisplay = document.getElementById(timerId); let rem = seconds;
+    btn.disabled = true; timerDisplay.style.display = 'block'; timerDisplay.innerText = `Resend OTP in ${rem}s`;
+    const interval = setInterval(() => {
+        rem--;
+        if (rem <= 0) { clearInterval(interval); btn.disabled = false; btn.innerText = resendLabel; timerDisplay.style.display = 'none'; }
+        else { timerDisplay.innerText = `Resend OTP in ${rem}s`; }
+    }, 1000);
+    timerRefSetter(interval);
+}
+
+function redirectExistingUserToLogin(existingUser) {
+    alert("This Mobile Number or Email ID is already registered!\n\nRegistration No. (User ID): " + existingUser.userId + "\nPassword: " + existingUser.password + "\n\nRedirecting you directly to the Login page...");
+    navigateTo('login');
+    document.getElementById('loginUserId').value = existingUser.userId; document.getElementById('loginPassword').value = existingUser.password;
+}
+
+async function generateRealOTP() {
+    const postName = document.getElementById('regPostName').value, fullName = document.getElementById('regFullName').value.trim(), mobile = document.getElementById('regMobile').value.trim(), confirmMobile = document.getElementById('regConfirmMobile').value.trim(), email = document.getElementById('regEmail').value.trim(), confirmEmail = document.getElementById('regConfirmEmail').value.trim();
+
+    if (!postName) { alert("Please select Post Name."); return; }
+    if (!fullName) { alert("Please enter Candidate's Full Name."); return; }
+    if (!/^\d{10}$/.test(mobile)) { alert("Please enter a valid 10-digit Mobile Number."); return; }
+    if (mobile !== confirmMobile) { alert("Mobile Number and Confirm Mobile Number do not match!"); return; }
+    if (!email || !email.includes('@')) { alert("Please enter a valid Email Address."); return; }
+    if (email !== confirmEmail) { alert("Email Address and Confirm Email Address do not match!"); return; }
+
+    const existingUser = findExistingUser(mobile, email);
+    if (existingUser) { redirectExistingUserToLogin(existingUser); return; }
+
+    const genBtn = document.getElementById('generateOtpBtn');
+    genBtn.disabled = true; genBtn.innerText = "SENDING OTP...";
+    isMobileVerified = false; regTwoFactorSessionId = null;
+
+    try {
+        let apiUrl = `https://2factor.in/API/V1/${TWOFACTOR_API_KEY}/SMS/+91${mobile}/AUTOGEN`;
+        if (TWOFACTOR_TEMPLATE_NAME.trim() !== "") apiUrl += `/${encodeURIComponent(TWOFACTOR_TEMPLATE_NAME.trim())}`;
+        const response = await fetch(apiUrl, {method:'GET'}), data = await response.json();
+
+        if (data.Status === "Success") {
+            regTwoFactorSessionId = data.Details;
+            document.getElementById('otpVerificationSection').style.display = 'block'; document.getElementById('mobileOtpInput').disabled = false; document.getElementById('mobileOtpInput').value = '';
+            document.getElementById('btnVerifyMobile').style.display = 'inline-block'; document.getElementById('btnVerifyMobile').disabled = false; document.getElementById('btnVerifyMobile').innerText = 'VALIDATE OTP';
+            document.getElementById('mobileVerifiedBadge').style.display = 'none';
+            if (regOtpTimer) clearInterval(regOtpTimer);
+            startCooldown('generateOtpBtn', 'otpTimerDisplay', (id) => { regOtpTimer = id; }, 60, 'RESEND OTP');
+        } else {
+            alert("2Factor API Error: " + (data.Details || "Unable to send OTP.")); genBtn.disabled = false; genBtn.innerText = "GENERATE OTP";
+        }
+    } catch (error) { alert("Network Error while connecting to 2Factor API."); genBtn.disabled = false; genBtn.innerText = "GENERATE OTP"; }
+}
+
+async function verifySingleOTP() {
+    const entered = document.getElementById('mobileOtpInput').value.trim();
+    if (!/^\d{4,6}$/.test(entered)) { alert("Please enter a valid 6-digit Mobile OTP."); return; }
+    if (!regTwoFactorSessionId) { alert("Please generate OTP first."); return; }
+
+    const verifyBtn = document.getElementById('btnVerifyMobile');
+    verifyBtn.disabled = true; verifyBtn.innerText = "CHECKING...";
+
+    try {
+        const verifyUrl = `https://2factor.in/API/V1/${TWOFACTOR_API_KEY}/SMS/VERIFY/${regTwoFactorSessionId}/${entered}`;
+        const response = await fetch(verifyUrl, {method:'GET'}), data = await response.json();
+
+        if (data.Status === "Success" && data.Details === "OTP Matched") {
+            isMobileVerified = true; document.getElementById('mobileOtpInput').disabled = true; verifyBtn.style.display = 'none'; document.getElementById('mobileVerifiedBadge').style.display = 'inline-flex';
+        } else {
+            alert("Invalid or Expired Mobile OTP! (" + (data.Details || "Mismatch") + ")"); verifyBtn.disabled = false; verifyBtn.innerText = "VALIDATE OTP";
+        }
+    } catch (err) { alert("Error verifying OTP with 2Factor."); verifyBtn.disabled = false; verifyBtn.innerText = "VALIDATE OTP"; }
+}
+
+function handleReverify() {
+    const regMobile = document.getElementById('regMobile').value.trim(), regEmail = document.getElementById('regEmail').value.trim(), existingUser = findExistingUser(regMobile, regEmail);
+    if (existingUser) { redirectExistingUserToLogin(existingUser); return; }
+    if (!isMobileVerified) { alert("Please generate and validate your Mobile OTP first!"); return; }
+    if (!document.getElementById('agreeCheck').checked) { alert("Please tick the 'I Agree' checkbox under Declaration."); return; }
+
+    const enteredCaptcha = document.getElementById('regCaptchaInput').value.trim();
+    if (enteredCaptcha !== captchaStore['regCaptchaCanvas']) {
+        alert("Invalid Captcha! Please type characters exactly as shown in the image.");
+        drawCaptcha('regCaptchaCanvas'); document.getElementById('regCaptchaInput').value = ''; return;
+    }
+
+    document.getElementById('revPostName').innerText = document.getElementById('regPostName').value; document.getElementById('revPostCode').innerText = document.getElementById('postCodeInput').value; document.getElementById('revFullName').innerText = document.getElementById('regFullName').value.trim(); document.getElementById('revMobile').innerText = regMobile; document.getElementById('revEmail').innerText = regEmail;
+    document.getElementById('reverifyBox').style.display = 'block'; document.getElementById('reverifyBox').scrollIntoView({behavior:'smooth'});
+}
+
+function resetRegistrationForm() {
+    document.getElementById('regPostName').value = ''; document.getElementById('postCodeInput').value = ''; document.getElementById('regFullName').value = ''; document.getElementById('regMobile').value = ''; document.getElementById('regConfirmMobile').value = ''; document.getElementById('regAltMobile').value = ''; document.getElementById('regEmail').value = ''; document.getElementById('regConfirmEmail').value = ''; document.getElementById('agreeCheck').checked = false; document.getElementById('regCaptchaInput').value = ''; document.getElementById('otpVerificationSection').style.display = 'none'; document.getElementById('reverifyBox').style.display = 'none'; document.querySelectorAll('.rev-check').forEach(c => c.checked = false);
+    if (regOtpTimer) clearInterval(regOtpTimer);
+    const genBtn = document.getElementById('generateOtpBtn'); genBtn.disabled = false; genBtn.innerText = 'GENERATE OTP'; document.getElementById('otpTimerDisplay').style.display = 'none'; isMobileVerified = false; regTwoFactorSessionId = null;
+}
+
+function handleFinalSubmit() {
+    for (let chk of document.querySelectorAll('.rev-check')) { if (!chk.checked) { alert("Please tick all checkboxes in the Re-verify section before submitting!"); return; } }
+
+    const regMobile = document.getElementById('regMobile').value.trim(), regEmail = document.getElementById('regEmail').value.trim(), regName = document.getElementById('regFullName').value.trim().toUpperCase(), regPost = document.getElementById('regPostName').value || "Junior Court Assistant", existingUser = findExistingUser(regMobile, regEmail);
+    if (existingUser) { redirectExistingUserToLogin(existingUser); return; }
+
+    const generatedUserId = generateUniqueRegistrationNo(), generatedPassword = Math.floor(10000000 + Math.random() * 90000000).toString(), users = getRegisteredUsers();
+    users.push({ userId: generatedUserId, password: generatedPassword, mobile: regMobile, email: regEmail, name: regName, post: regPost, postCode: "01" }); saveRegisteredUsers(users);
+
+    alert("Registration Successful!\n\nApplication Sequence No (User ID): " + generatedUserId + "\nPassword: " + generatedPassword + "\n\nPlease note down your User ID and Password to Login.");
+    resetRegistrationForm(); navigateTo('login'); document.getElementById('loginUserId').value = generatedUserId; document.getElementById('loginPassword').value = '';
+}
+
+function populateCandidateData(appNo, fullName, email, mobile, postName) {
+    document.getElementById('noteModalRegNo').innerText = appNo; document.getElementById('dashAppNo').innerText = appNo; document.getElementById('dashFullName').innerText = fullName; document.getElementById('dashEmail').innerText = email; document.getElementById('dashMobile').innerText = mobile; document.getElementById('dashPostName').innerText = postName; document.getElementById('formAppNo').value = appNo; document.getElementById('formFullName').value = fullName; document.getElementById('paymentCandidateName').innerText = fullName; document.getElementById('formEmail').value = email; document.getElementById('formMobile').value = mobile; document.getElementById('formPostName').value = postName;
+}
+
+function showNoteModal(appNo) { if (appNo) document.getElementById('noteModalRegNo').innerText = appNo; document.getElementById('noteModalOverlay').style.display = 'flex'; }
+function closeNoteModal() { document.getElementById('noteModalOverlay').style.display = 'none'; }
+
+function handleLogin() {
+    const uid = document.getElementById('loginUserId').value.trim(), pwd = document.getElementById('loginPassword').value.trim(), cap = document.getElementById('loginCaptchaInput').value.trim();
+    if (!uid || !pwd) { alert("Please enter both User ID and Password."); return; }
+    if (cap !== captchaStore['loginCaptchaCanvas']) { alert("Invalid Captcha! Please type the exact characters shown."); drawCaptcha('loginCaptchaCanvas'); document.getElementById('loginCaptchaInput').value = ''; return; }
+
+    const matchedUser = getRegisteredUsers().find(u => u.userId === uid && u.password === pwd);
+    if (!matchedUser) { alert("Invalid User ID or Password! Please check your credentials or Register first."); drawCaptcha('loginCaptchaCanvas'); document.getElementById('loginCaptchaInput').value = ''; return; }
+
+    populateCandidateData(matchedUser.userId, matchedUser.name, matchedUser.email, matchedUser.mobile, matchedUser.post || 'Junior Court Assistant');
+    navigateTo('applicant-details'); showNoteModal(matchedUser.userId);
+}
+
+function goToApplicationForm() {
+    const overlay = document.getElementById('loadingOverlay'), fill = document.getElementById('progressFill');
+    overlay.style.display = 'flex'; fill.style.width = '43%'; fill.innerText = '43%';
+    setTimeout(() => { fill.style.width = '55%'; fill.innerText = '55%'; }, 300);
+    setTimeout(() => { fill.style.width = '100%'; fill.innerText = '100%'; }, 600);
+    setTimeout(() => { overlay.style.display = 'none'; history.pushState({page:'application-form'}, '', '#application-form'); showView('application-form'); }, 900);
+}
+
+function calculateAgeOnDate() {
+    const dobVal = document.getElementById('formDob').value; if (!dobVal) return;
+    const dob = new Date(dobVal), target = new Date('2026-09-01');
+    let years = target.getFullYear() - dob.getFullYear(), months = target.getMonth() - dob.getMonth(), days = target.getDate() - dob.getDate();
+    if (days < 0) { months--; days += 30; } if (months < 0) { years--; months += 12; }
+    document.getElementById('formAgeDisplay').value = `${years} Years ${months} Months ${days} Days`;
+}
+
+function logoutUser() { closeNoteModal(); document.getElementById('commonTopBanner').style.display = 'block'; document.getElementById('loginPassword').value = ''; document.getElementById('loginCaptchaInput').value = ''; navigateTo('login'); }
+function togglePassword() {
+    const pwd = document.getElementById('loginPassword'), eye = document.getElementById('toggleEye');
+    if (pwd.type === 'password') { pwd.type = 'text'; eye.classList.replace('fa-eye', 'fa-eye-slash'); }
+    else { pwd.type = 'password'; eye.classList.replace('fa-eye-slash', 'fa-eye'); }
+}
+
+function showView(page) {
+    document.querySelectorAll('.page-view').forEach(el => el.classList.remove('active'));
+    if (page === 'login') { document.getElementById('login-view').classList.add('active'); drawCaptcha('loginCaptchaCanvas'); document.getElementById('loginCaptchaInput').value = ''; }
+    else if (page === 'register') { document.getElementById('register-view').classList.add('active'); drawCaptcha('regCaptchaCanvas'); document.getElementById('regCaptchaInput').value = ''; }
+    else if (page === 'applicant-details') { document.getElementById('applicant-details-view').classList.add('active'); }
+    else if (page === 'application-form') { document.getElementById('application-form-view').classList.add('active'); switchAppTab(1); }
+    else if (page === 'payment-gateway') { document.getElementById('payment-gateway-view').classList.add('active'); }
+    else { document.getElementById('home-view').classList.add('active'); }
+    window.scrollTo(0, 0);
+}
+
+function navigateTo(page) {
+    if (page === 'register') {
+        const overlay = document.getElementById('loadingOverlay'), fill = document.getElementById('progressFill');
+        overlay.style.display = 'flex'; fill.style.width = '43%'; fill.innerText = '43%';
+        setTimeout(() => { fill.style.width = '85%'; fill.innerText = '85%'; }, 250);
+        setTimeout(() => { overlay.style.display = 'none'; history.pushState({page:'register'}, '', '#register'); showView('register'); }, 600);
+    } else if (page === 'login') { history.pushState({page:'login'}, '', '#login'); showView('login');
+    } else if (page === 'applicant-details') { history.pushState({page:'applicant-details'}, '', '#applicant-details'); showView('applicant-details');
+    } else if (page === 'application-form') { history.pushState({page:'application-form'}, '', '#application-form'); showView('application-form');
+    } else { history.pushState({page:'home'}, '', window.location.pathname); showView('home'); }
+}
+
+window.addEventListener('popstate', (e) => { const statePage = (e.state && e.state.page) ? e.state.page : (location.hash.replace('#', '') || 'home'); showView(statePage); });
+window.onload = function() { drawCaptcha('loginCaptchaCanvas'); drawCaptcha('regCaptchaCanvas'); initAllDropdowns(); };
+</script>
+</body>
+</html>
