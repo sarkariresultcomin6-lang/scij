@@ -731,7 +731,6 @@ body{background:#f9f6f0;color:#333;min-height:100vh;display:flex;flex-direction:
                     </div>
                 </div>
 
-
                 <div class="summary-block">
                     <div class="summary-header">Payment Details</div>
                     <div class="summary-body">
@@ -779,7 +778,7 @@ body{background:#f9f6f0;color:#333;min-height:100vh;display:flex;flex-direction:
                 </div>
             </div>
 
-            <!-- PRINT BUTTON (Without Captcha) -->
+            <!-- PRINT BUTTON -->
             <div class="print-section-wrap no-print" id="printSection" style="display:none; align-items:center; justify-content:center;">
                 <button type="button" class="btn-submit-blue" style="padding:8px 20px; font-size:12px;" onclick="window.print()">PRINT / DOWNLOAD PDF</button>
             </div>
@@ -1186,7 +1185,7 @@ body{background:#f9f6f0;color:#333;min-height:100vh;display:flex;flex-direction:
                     <div class="app-section-header" onclick="toggleSectionBody(this)"><span>Payment Details</span><span class="collapse-sign">&minus;</span></div>
                     <div class="app-section-body">
                         <div style="font-size:12.5px;color:#333;margin-bottom:14px;line-height:2;">
-                            <div style="display:flex;max-width:450px;"><span style="width:240px;">Candidate's Name</span><span style="font-weight:bold;" id="paymentCandidateName">DEEPANSHU</span></div>
+                            <div style="display:flex;max-width:450px;"><span style="width:240px;">Candidate's Name</span><span style="font-weight:bold;" id="paymentCandidateName">DEEP</span></div>
                             <div style="display:flex;max-width:450px;"><span style="width:240px;">Applicable Registration Fee (Rs)</span><span style="font-weight:bold;" id="paymentFeeVal">1500</span></div>
                         </div>
                         <div class="note-alert" style="margin-bottom:0;"><span class="note-title">Note:</span>For more details on registration fee, please refer to the detailed Advertisement.</div>
@@ -1219,7 +1218,7 @@ body{background:#f9f6f0;color:#333;min-height:100vh;display:flex;flex-direction:
                             </div>
                             <div style="display:flex;gap:8px;align-items:flex-start;">
                                 <input type="checkbox" id="decl4" class="final-decl-chk" style="margin-top:3px;">
-                                <label for="decl4">I hereby solemnly declare that I will abide by the terms and conditions as mentioned in the Advertisement dated 30.10.2026 for recruitment to the post of Junior Court Assistant.</label>
+                                <label for="decl4">I hereby solemnly declare that I will abide by the terms and conditions as mentioned in the Advertisement dated 30.10.2026 for recruitment to the post of Junior Court Attendant.</label>
                             </div>
                         </div>
                     </div>
@@ -1289,8 +1288,6 @@ const PASSING_YEARS = ["--Select--"];
 for (let y = 2025; y >= 1975; y--) PASSING_YEARS.push(y.toString());
 const TENTH_QUAL_NAMES = ["--Select--","SSLC","SSC","Matriculation"];
 const MARKS_TYPE_OPTIONS = ["--Select--","Percentage","CGPA","Grade of Marks"];
-const DEGREE_NAME_OPTIONS = ["--Select--","Bachelor degree of a recognized University in India"];
-const MODE_OF_EDU_OPTIONS = ["--Select--","Full Time","Part Time","Correspondence"];
 const INDIAN_STATES = ["Andhra Pradesh","Arunachal Pradesh","Assam","Bihar","Chandigarh","Chhattisgarh","Delhi","Goa","Gujarat","Haryana","Himachal Pradesh","Jammu and Kashmir","Jharkhand","Karnataka","Kerala","Ladakh","Madhya Pradesh","Maharashtra","Manipur","Meghalaya","Mizoram","Nagaland","Odisha","Punjab","Rajasthan","Sikkim","Tamil Nadu","Telangana","Tripura","Uttar Pradesh","Uttarakhand","West Bengal"];
 
 const captchaStore = {};
@@ -1383,7 +1380,7 @@ function handleMarksTypeChange(prefix, selectedType) {
     const obtCol = document.getElementById(prefix + 'MarksObtCol'), obtLbl = document.getElementById(prefix + 'MarksObtLabel'), obtInp = document.getElementById(prefix + 'MarksObt');
     const maxCol = document.getElementById(prefix + 'MaxMarksCol'), maxLbl = document.getElementById(prefix + 'MaxMarksLabel'), maxInp = document.getElementById(prefix + 'MaxMarks');
     const percCol = document.getElementById(prefix + 'PercCol'), percInp = document.getElementById(prefix + 'Percentage');
-    const extraRow = document.getElementById(prefix === 'grad' ? 'gradMarksRow4' : (prefix + 'MarksRow3'));
+    const extraRow = document.getElementById(prefix + 'MarksRow3');
 
     obtInp.value = ''; maxInp.value = ''; percInp.value = '';
 
@@ -1398,7 +1395,7 @@ function handleMarksTypeChange(prefix, selectedType) {
         obtCol.style.display = 'block'; obtLbl.innerHTML = 'Grade of Marks' + req; obtInp.placeholder = 'Grade of Marks'; obtInp.type = 'text';
         maxCol.style.display = 'none'; percCol.style.display = 'none'; extraRow.style.display = 'none';
     } else {
-        obtCol.style.display = 'none'; if (prefix === 'grad') maxCol.style.display = 'none'; extraRow.style.display = 'none';
+        obtCol.style.display = 'none'; extraRow.style.display = 'none';
     }
 }
 
@@ -1420,7 +1417,6 @@ function markFileUploaded(inputId, badgeId) {
         else if (inputId === 'docSign') { const r = new FileReader(); r.onload = (e) => { uploadedFilesData.signDataUrl = e.target.result; }; r.readAsDataURL(file); }
         else if (inputId === 'docTenthCert') uploadedFilesData.cert10Url = blobUrl;
         else if (inputId === 'docTwelfthCert') uploadedFilesData.cert12Url = blobUrl;
-        else if (inputId === 'docGradCert') uploadedFilesData.certGradUrl = blobUrl;
         else if (inputId === 'docCategoryCert') uploadedFilesData.certCatUrl = blobUrl;
     } else { if (b) b.style.display = 'none'; }
 }
@@ -1445,7 +1441,6 @@ function initAllDropdowns() {
 
     createSearchableDropdown('twelfthYear', 'Year of Passing', PASSING_YEARS, false);
     createSearchableDropdown('twelfthMarksType', 'Please select any of the following', MARKS_TYPE_OPTIONS, false, (v) => handleMarksTypeChange('twelfth', v));
-
 }
 
 function toggleSameAddress() {
@@ -1548,13 +1543,30 @@ function validateTab3() {
         if (!checkInputField('tenthMarksObt', '10th ' + tType)) return false;
     }
 
+    const twType = document.getElementById('twelfthMarksType').value;
+    if (twType === 'Percentage') {
+        if (!checkInputField('twelfthMarksObt', '12th Marks Obtained')) return false;
+        if (!checkInputField('twelfthMaxMarks', '12th Maximum Marks')) return false;
+    } else if (twType === 'CGPA' || twType === 'Grade of Marks') {
+        if (!checkInputField('twelfthMarksObt', '12th ' + twType)) return false;
+    }
+
+    return true;
+}
+
 function validateTab4() {
-    const files = [{id:'docPhoto', label:'Recent passport size photo'}, {id:'docSign', label:'Scanned signature'}, {id:'docTenthCert', label:'SSLC/SSC/Matriculation certificate/Marksheet'}, {id:'docGradCert', label:'Essential Qualification Degree certificate'}];
+    const files = [
+        {id:'docPhoto', label:'Recent passport size photo'},
+        {id:'docSign', label:'Scanned signature'},
+        {id:'docTenthCert', label:'SSLC/SSC/Matriculation certificate/Marksheet'},
+        {id:'docTwelfthCert', label:'Intermediate(12th) certificate/Marksheet'}
+    ];
     for (let f of files) {
         const el = document.getElementById(f.id);
-        if (!el.files || el.files.length === 0) {
+        if (!el || !el.files || el.files.length === 0) {
             alert(`Please upload mandatory (*) document: "${f.label}"`);
-            el.parentElement.scrollIntoView({behavior:'smooth',block:'center'}); return false;
+            if (el && el.parentElement) el.parentElement.scrollIntoView({behavior:'smooth',block:'center'});
+            return false;
         }
     }
     for (let chk of document.querySelectorAll('.final-decl-chk')) {
@@ -1577,12 +1589,12 @@ function previewApplication() {
             <tr><th>Application No.</th><td>${document.getElementById('formAppNo').value}</td></tr>
             <tr><th>Post Name</th><td>${document.getElementById('formPostName').value} (Code: 01)</td></tr>
             <tr><th>Candidate's Name</th><td>${document.getElementById('formFullName').value}</td></tr>
-            <tr><th>Gender & DOB</th><td>${document.getElementById('formGender').value} | ${document.getElementById('formDob').value}</td></tr>
+            <tr><th>Gender &amp; DOB</th><td>${document.getElementById('formGender').value} | ${document.getElementById('formDob').value}</td></tr>
             <tr><th>Category</th><td>${document.getElementById('formCategory').value}</td></tr>
             <tr><th>Father's / Mother's Name</th><td>${document.getElementById('formFatherName').value} / ${document.getElementById('formMotherName').value}</td></tr>
             <tr><th>Test Cities (1, 2, 3)</th><td>1. ${document.getElementById('formCity1').value} | 2. ${document.getElementById('formCity2').value} | 3. ${document.getElementById('formCity3').value}</td></tr>
             <tr><th>Correspondence Address</th><td>${document.getElementById('corrAddr1').value}, ${document.getElementById('corrDistrict').value}, ${document.getElementById('corrState').value} - ${document.getElementById('corrPincode').value}</td></tr>
-            <tr><th>10th Board & Year</th><td>${document.getElementById('tenthBoard').value} (${document.getElementById('tenthYear').value})</td></tr>
+            <tr><th>10th Board &amp; Year</th><td>${document.getElementById('tenthBoard').value} (${document.getElementById('tenthYear').value})</td></tr>
             <tr><th>Applicable Fee (Rs)</th><td>Rs. ${document.getElementById('paymentFeeVal').innerText}/-</td></tr>
         </table>
     `;
@@ -1629,11 +1641,6 @@ function formatDobPretty(dateStr) {
     return `${String(d.getDate()).padStart(2,'0')}/${months[d.getMonth()]}/${d.getFullYear()}`;
 }
 
-function formatMonthYear(val) {
-    if (!val || !val.includes('-')) return val;
-    const parts = val.split('-'); return `${parts[1]}/${parts[0]}`;
-}
-
 function completeBillDeskPayment() {
     const cap = document.getElementById('paymentCaptchaInput').value.trim();
     if (cap !== captchaStore['paymentCaptchaCanvas']) {
@@ -1671,7 +1678,11 @@ function completeBillDeskPayment() {
     document.getElementById('prCity3').innerText = document.getElementById('formCity3').value;
     document.getElementById('prCategory').innerText = document.getElementById('formCategory').value;
 
-    const pwbdVal = document.querySelector('input[name="pwbd"]:checked'), exsVal = document.querySelector('input[name="exService"]:checked'), ffVal = document.querySelector('input[name="freedomFighter"]:checked'), deptVal = document.querySelector('input[name="deptCandidate"]:checked'), sameAddrVal = document.querySelector('input[name="sameAddrRadio"]:checked'), typVal = document.querySelector('input[name="typingSpeed"]:checked'), compVal = document.querySelector('input[name="computerKnowledge"]:checked');
+    const pwbdVal = document.querySelector('input[name="pwbd"]:checked'),
+          exsVal = document.querySelector('input[name="exService"]:checked'),
+          ffVal = document.querySelector('input[name="freedomFighter"]:checked'),
+          deptVal = document.querySelector('input[name="deptCandidate"]:checked'),
+          sameAddrVal = document.querySelector('input[name="sameAddrRadio"]:checked');
 
     document.getElementById('prPwbd').innerText = pwbdVal ? pwbdVal.value : 'No';
     document.getElementById('prExs').innerText = exsVal ? exsVal.value : 'No';
@@ -1715,7 +1726,7 @@ function completeBillDeskPayment() {
     document.getElementById('pr12Type').innerText = document.getElementById('twelfthMarksType').value || '-';
     document.getElementById('pr12Max').innerText = document.getElementById('twelfthMaxMarks').value || '-';
     document.getElementById('pr12Obt').innerText = document.getElementById('twelfthMarksObt').value || '-';
-    document.getElementById('pr12Perc').innerText = document.getElementById('twelfthPercentage').value || '-';
+    document.getElementById('pr12Perc').innerText = document.getElementById('twelfthPercentage').value || document.getElementById('twelfthMarksObt').value || '-';
 
     document.getElementById('prPayAmt').innerText = document.getElementById('paymentFeeVal').innerText;
     const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789'; let txn = 'EHD5K';
@@ -1884,7 +1895,7 @@ function resetRegistrationForm() {
 function handleFinalSubmit() {
     for (let chk of document.querySelectorAll('.rev-check')) { if (!chk.checked) { alert("Please tick all checkboxes in the Re-verify section before submitting!"); return; } }
 
-    const regMobile = document.getElementById('regMobile').value.trim(), regEmail = document.getElementById('regEmail').value.trim(), regName = document.getElementById('regFullName').value.trim().toUpperCase(), regPost = document.getElementById('regPostName').value || "Junior Court Assistant", existingUser = findExistingUser(regMobile, regEmail);
+    const regMobile = document.getElementById('regMobile').value.trim(), regEmail = document.getElementById('regEmail').value.trim(), regName = document.getElementById('regFullName').value.trim().toUpperCase(), regPost = document.getElementById('regPostName').value || "Junior Court Attendant", existingUser = findExistingUser(regMobile, regEmail);
     if (existingUser) { redirectExistingUserToLogin(existingUser); return; }
 
     const generatedUserId = generateUniqueRegistrationNo(), generatedPassword = Math.floor(10000000 + Math.random() * 90000000).toString(), users = getRegisteredUsers();
@@ -1909,7 +1920,7 @@ function handleLogin() {
     const matchedUser = getRegisteredUsers().find(u => u.userId === uid && u.password === pwd);
     if (!matchedUser) { alert("Invalid User ID or Password! Please check your credentials or Register first."); drawCaptcha('loginCaptchaCanvas'); document.getElementById('loginCaptchaInput').value = ''; return; }
 
-    populateCandidateData(matchedUser.userId, matchedUser.name, matchedUser.email, matchedUser.mobile, matchedUser.post || 'Junior Court Assistant');
+    populateCandidateData(matchedUser.userId, matchedUser.name, matchedUser.email, matchedUser.mobile, matchedUser.post || 'Junior Court Attendant');
     navigateTo('applicant-details'); showNoteModal(matchedUser.userId);
 }
 
